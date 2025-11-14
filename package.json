@@ -1,0 +1,13 @@
+{
+  "name": "workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix admas-consulting run dev",
+    "build": "npm --prefix admas-consulting run build",
+    "start": "npm --prefix admas-consulting run start"
+  },
+  "dependencies": {
+    "jspdf": "^3.0.3",
+    "next-intl": "^4.5.2"
+  }
+}

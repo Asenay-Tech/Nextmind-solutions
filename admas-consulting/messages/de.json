@@ -1,0 +1,271 @@
+{
+  "common": {
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "close": "Schließen",
+    "cancel": "Abbrechen",
+    "submit": "Absenden",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "back": "Zurück",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "clear": "Löschen",
+    "all": "Alle",
+    "viewMore": "Mehr anzeigen",
+    "learnMore": "Mehr erfahren",
+    "getStarted": "Loslegen",
+    "contactUs": "Kontaktieren Sie uns"
+  },
+  "nav": {
+    "home": "Startseite",
+    "solutions": "Lösungen",
+    "businessTraining": "Business-Schulung",
+    "company": "Unternehmen",
+    "resources": "Ressourcen",
+    "login": "Anmelden",
+    "getStarted": "Loslegen",
+    "aboutUs": "Über uns",
+    "partners": "Partner",
+    "support": "Support",
+    "ourProcess": "Unser Prozess",
+    "blog": "Blog",
+    "blogComingSoon": "Blog (Demnächst)"
+  },
+  "header": {
+    "home": "Startseite",
+    "solutions": "Lösungen",
+    "businessTraining": "Business-Schulung",
+    "company": "Unternehmen",
+    "resources": "Ressourcen",
+    "login": "Anmelden",
+    "getStarted": "Loslegen",
+    "aboutUs": "Über uns",
+    "partners": "Partner",
+    "support": "Support",
+    "ourProcess": "Unser Prozess",
+    "blog": "Blog",
+    "blogComingSoon": "Blog (Demnächst)"
+  },
+  "hero": {
+    "badge": "KI-gestützte Geschäftslösungen",
+    "title": "Wo intelligente Systeme auf immersive intelligente Ideen treffen",
+    "titlePart1": "Wo",
+    "titlePart2": "intelligente Systeme",
+    "titlePart3": "auf immersive",
+    "titlePart4": "intelligente Ideen treffen",
+    "subtitle": "Erschließen Sie autonome Entscheidungsfindung und orchestrieren Sie komplexe Workflows mit menscheninspirierter KI. AdmasITS verbindet forschungsreife Intelligenz mit Unternehmensausführung.",
+    "exploreSolutions": "Lösungen erkunden",
+    "bookDemo": "Demo buchen"
+  },
+  "services": {
+    "title": "Unsere KI-Agent-Lösungen",
+    "subtitle": "Umfassende KI-Agent-gestützte Lösungen, die auf die Transformation Ihrer Geschäftsprozesse zugeschnitten sind",
+    "noResults": "Keine Lösungen gefunden, die Ihren Kriterien entsprechen",
+    "clearFilters": "Filter löschen und alle anzeigen"
+  },
+  "whyChooseUs": {
+    "title": "Warum AdmasITS wählen",
+    "subtitle": "Wir kombinieren modernste KI-Technologie mit tiefgreifender Geschäftsexpertise, um Lösungen zu liefern, die Operationen wirklich transformieren",
+    "enterpriseSecurity": {
+      "title": "Unternehmenstaugliche Sicherheit",
+      "description": "Bank-Level-Verschlüsselung und Einhaltung internationaler Datenschutzstandards."
+    },
+    "rapidImplementation": {
+      "title": "Schnelle Implementierung",
+      "description": "In Tagen, nicht Monaten, mit unserer bewährten Bereitstellungsmethodik einsatzbereit."
+    },
+    "expertTeam": {
+      "title": "Expertenteam",
+      "description": "Arbeiten Sie mit erfahrenen Beratern, die sowohl KI-Technologie als auch Geschäftsprozesse verstehen."
+    },
+    "measurableROI": {
+      "title": "Messbarer ROI",
+      "description": "Verfolgen Sie klare Metriken und sehen Sie greifbare Verbesserungen bei Effizienz und Kosteneinsparungen."
+    },
+    "support24x7": {
+      "title": "24/7 Support",
+      "description": "Rund-um-die-Uhr technischer Support und Überwachung, um Ihre Systeme reibungslos am Laufen zu halten."
+    },
+    "industryExpertise": {
+      "title": "Branchenexpertise",
+      "description": "Tiefgreifende Expertise in den Bereichen Logistik, Finanzen, Gastgewerbe und IT mit bewährten Methoden und Best Practices."
+    }
+  },
+  "howItWorks": {
+    "title": "Wie wir arbeiten",
+    "subtitle": "Unser sechsstufiger Lebenszyklus stellt sicher, dass jede Automatisierung, die wir erstellen, messbar, skalierbar und kontinuierlich verbesserbar ist.",
+    "discover": {
+      "title": "Entdecken",
+      "description": "Geschäftsziele, Workflows und Automatisierungsmöglichkeiten verstehen."
+    },
+    "analyze": {
+      "title": "Analysieren",
+      "description": "Daten und Systeme bewerten, um Ineffizienzen und Optimierungsmöglichkeiten zu identifizieren."
+    },
+    "design": {
+      "title": "Gestalten",
+      "description": "Maßgeschneiderte KI- und Automatisierungsarchitektur erstellen, die mit der Geschäftsstrategie übereinstimmt."
+    },
+    "develop": {
+      "title": "Entwickeln",
+      "description": "Skalierbare KI-Workflows und Systeme erstellen und integrieren."
+    },
+    "deploy": {
+      "title": "Bereitstellen",
+      "description": "Automatisierung auf zuverlässiger Hosting-Infrastruktur konfigurieren, testen und starten."
+    },
+    "optimize": {
+      "title": "Optimieren",
+      "description": "Kontinuierlich überwachen, Modelle neu trainieren und Systemleistung verbessern."
+    }
+  },
+  "cta": {
+    "title": "Bereit, Ihr Unternehmen zu transformieren?",
+    "subtitle": "Vereinbaren Sie eine kostenlose Beratung mit unseren Experten und entdecken Sie, wie KI Ihre Operationen revolutionieren kann.",
+    "getStartedToday": "Heute loslegen",
+    "bookDemo": "Demo buchen",
+    "expertSupport": "Experten-Support",
+    "customSolutions": "Maßgeschneiderte Lösungen",
+    "globalReach": "Global",
+    "reachScale": "Reichweite & Skalierung"
+  },
+  "footer": {
+    "tagline": "KI-gestützte Systeme & intelligente Ideen",
+    "description": "Transformation von Unternehmen mit KI-gestützten Lösungen und Expertenberatung. Wo intelligente Systeme, intelligente Ideen und menschenorientierte Innovation zusammenkommen.",
+    "solutions": {
+      "title": "Lösungen",
+      "aiAgents": "KI-Agenten & Automatisierung",
+      "inventory": "Inventar & Logistik",
+      "finance": "Finanzen & Abrechnung",
+      "itInfrastructure": "IT-Infrastruktur"
+    },
+    "company": {
+      "title": "Unternehmen",
+      "aboutUs": "Über uns",
+      "businessTraining": "Business-Schulung",
+      "partners": "Partner"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "blog": "Blog (Demnächst)",
+      "ourProcess": "Unser Prozess",
+      "support": "Support"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen",
+      "cookies": "Cookie-Richtlinie",
+      "gdpr": "DSGVO-Konformität"
+    },
+    "copyright": "Alle Rechte vorbehalten.",
+    "email": "contact@admasits.com",
+    "phone": "+49 176 57725997",
+    "location": "Frankfurt, Deutschland."
+  },
+  "demoBooking": {
+    "title": "Demo buchen",
+    "step": "Schritt",
+    "of": "von",
+    "step1": {
+      "title": "Grundinformationen",
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "companyName": "Firmenname",
+      "companyWebsite": "Firmenwebsite (optional)",
+      "country": "Land / Region"
+    },
+    "step2": {
+      "title": "Geschäftsdetails",
+      "teamSize": "Teamgröße",
+      "industry": "Branche",
+      "jobRole": "Berufsrolle"
+    },
+    "step3": {
+      "title": "Demo-Zweck",
+      "automationAreas": "Was möchten Sie automatisieren?",
+      "challenges": "Beschreiben Sie Ihre aktuellen Herausforderungen",
+      "timeline": "Wie schnell planen Sie zu starten?"
+    },
+    "step4": {
+      "title": "Terminpräferenzen",
+      "preferredTime": "Bevorzugte Demo-Zeit",
+      "timezone": "Zeitzone",
+      "additionalNotes": "Zusätzliche Hinweise zur Vorbereitung"
+    },
+    "step5": {
+      "title": "Vielen Dank!",
+      "message": "Wir haben Ihre Demo-Anfrage erhalten. Unser Team wird Sie in Kürze kontaktieren, um Ihre persönliche Demo zu vereinbaren."
+    }
+  },
+  "training": {
+    "whyChoose": {
+      "title": "Warum unsere Schulung wählen",
+      "expertDepartment": {
+        "title": "Expertenschulungsabteilung",
+        "description": "Entwickelt und durchgeführt von einer engagierten Schulungsabteilung aus akademischen Fachkräften, Branchenexperten und leitenden Beratern."
+      },
+      "practicalApplication": {
+        "title": "Praktische, realitätsnahe Anwendung",
+        "description": "Umfasst echte Fallstudien, praktische Übungen und angewandte Managementtechniken, die Sie sofort einsetzen können."
+      },
+      "certification": {
+        "title": "Weltweit anerkannte Zertifizierung",
+        "description": "Erhalten Sie ein offizielles Zertifikat von AdmasITS — ideal für professionelle Portfolios und Karrierewachstum."
+      },
+      "skillDevelopment": {
+        "title": "Karriereorientierte Kompetenzentwicklung",
+        "description": "Erwerben Sie hochwirksame Management-, Finanz- und Führungskompetenzen, die Beförderungen und organisatorischen Erfolg unterstützen."
+      }
+    },
+    "modules": {
+      "title": "Schulungsmodule",
+      "subtitle": "Umfassendes Curriculum mit {count} wesentlichen Geschäftsmanagement-Themen",
+      "viewDetails": "Details anzeigen",
+      "enrollNow": "Jetzt einschreiben"
+    },
+    "cta": {
+      "title": "Bereit, in Ihre Zukunft zu investieren?",
+      "subtitle": "Schließen Sie sich Hunderten von Fachkräften an, die ihre Karrieren durch unsere Schulungsprogramme transformiert haben.",
+      "requestInfo": "Schulungsinformationen anfordern",
+      "backToHome": "Zurück zur Startseite"
+    },
+    "enrollment": {
+      "title": "Einschreibungsformular",
+      "subtitle": "Füllen Sie das Formular unten aus, um sich für unsere Geschäftsmanagement-Schulungsprogramme einzuschreiben",
+      "startEnrollment": "Einschreibungsprozess starten",
+      "collapseForm": "Formular einklappen",
+      "personalInfo": "Persönliche Informationen",
+      "companyInfo": "Unternehmen / Organisation",
+      "optional": "(Optional)",
+      "courseSelection": "Kursauswahl",
+      "enrollmentPreferences": "Einschreibungspräferenzen",
+      "additionalNotes": "Zusätzliche Hinweise",
+      "consent": {
+        "accurate": "Ich bestätige, dass die bereitgestellten Informationen korrekt sind.",
+        "contact": "Ich stimme zu, von AdmasITS kontaktiert zu werden."
+      },
+      "requestEnrollment": "Einschreibung anfordern",
+      "success": "Einschreibungsanfrage erfolgreich übermittelt."
+    },
+    "request": {
+      "title": "Schulungsinformationen anfordern",
+      "subtitle": "Wählen Sie Ihre Schulungsmodule aus und geben Sie Ihre Kontaktinformationen an.",
+      "modules": "Schulungsmodule",
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "organization": "Organisation / Unternehmen",
+      "jobTitle": "Berufsbezeichnung",
+      "country": "Land",
+      "message": "Nachricht / Zusätzliche Details",
+      "submitRequest": "Anfrage absenden",
+      "success": "Ihre Schulungsanfrage wurde erhalten. Wir werden Sie in Kürze kontaktieren."
+    }
+  }
+}

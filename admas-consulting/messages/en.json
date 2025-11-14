@@ -1,0 +1,271 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "close": "Close",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "next": "Next",
+    "previous": "Previous",
+    "back": "Back",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "all": "All",
+    "viewMore": "View More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us"
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "businessTraining": "Business Training",
+    "company": "Company",
+    "resources": "Resources",
+    "login": "Login",
+    "getStarted": "Get Started",
+    "aboutUs": "About Us",
+    "partners": "Partners",
+    "support": "Support",
+    "ourProcess": "Our Process",
+    "blog": "Blog",
+    "blogComingSoon": "Blog (Coming Soon)"
+  },
+  "header": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "businessTraining": "Business Training",
+    "company": "Company",
+    "resources": "Resources",
+    "login": "Login",
+    "getStarted": "Get Started",
+    "aboutUs": "About Us",
+    "partners": "Partners",
+    "support": "Support",
+    "ourProcess": "Our Process",
+    "blog": "Blog",
+    "blogComingSoon": "Blog (Coming Soon)"
+  },
+  "hero": {
+    "badge": "AI-Powered Business Solutions",
+    "title": "Where Intelligent Systems Meet Immersive Intelligent Ideas",
+    "titlePart1": "Where",
+    "titlePart2": "Intelligent Systems",
+    "titlePart3": "Meet Immersive",
+    "titlePart4": "Intelligent Ideas",
+    "subtitle": "Unlock autonomous decision-making and orchestrate complex workflows with human-inspired AI. AdmasITS blends research-grade intelligence with enterprise execution.",
+    "exploreSolutions": "Explore Solutions",
+    "bookDemo": "Book a Demo"
+  },
+  "services": {
+    "title": "Our AI Agent Solutions",
+    "subtitle": "Comprehensive AI Agent–powered solutions tailored to transform your business operations",
+    "noResults": "No solutions found matching your criteria",
+    "clearFilters": "Clear filters and show all"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose AdmasITS",
+    "subtitle": "We combine cutting-edge AI technology with deep business expertise to deliver solutions that truly transform operations",
+    "enterpriseSecurity": {
+      "title": "Enterprise-Grade Security",
+      "description": "Bank-level encryption and compliance with international data protection standards."
+    },
+    "rapidImplementation": {
+      "title": "Rapid Implementation",
+      "description": "Get up and running in days, not months, with our proven deployment methodology."
+    },
+    "expertTeam": {
+      "title": "Expert Team",
+      "description": "Work with seasoned consultants who understand both AI technology and business operations."
+    },
+    "measurableROI": {
+      "title": "Measurable ROI",
+      "description": "Track clear metrics and see tangible improvements in efficiency and cost savings."
+    },
+    "support24x7": {
+      "title": "24/7 Support",
+      "description": "Round-the-clock technical support and monitoring to keep your systems running smoothly."
+    },
+    "industryExpertise": {
+      "title": "Industry Expertise",
+      "description": "Deep expertise across logistics, finance, hospitality, and IT sectors with proven methodologies and best practices."
+    }
+  },
+  "howItWorks": {
+    "title": "How We Work",
+    "subtitle": "Our six-step lifecycle ensures every automation we build is measurable, scalable, and continuously improving.",
+    "discover": {
+      "title": "Discover",
+      "description": "Understand business goals, workflows, and automation opportunities."
+    },
+    "analyze": {
+      "title": "Analyze",
+      "description": "Evaluate data and systems to identify inefficiencies and optimization opportunities."
+    },
+    "design": {
+      "title": "Design",
+      "description": "Create tailored AI and automation architecture aligned with business strategy."
+    },
+    "develop": {
+      "title": "Develop",
+      "description": "Build and integrate scalable AI workflows and systems."
+    },
+    "deploy": {
+      "title": "Deploy",
+      "description": "Configure, test, and launch automation on reliable hosting infrastructure."
+    },
+    "optimize": {
+      "title": "Optimize",
+      "description": "Continuously monitor, retrain models, and improve system performance."
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Schedule a free consultation with our experts and discover how AI can revolutionize your operations.",
+    "getStartedToday": "Get Started Today",
+    "bookDemo": "Book a Demo",
+    "expertSupport": "Expert Support",
+    "customSolutions": "Custom Solutions",
+    "globalReach": "Global",
+    "reachScale": "Reach & Scale"
+  },
+  "footer": {
+    "tagline": "AI-Driven Systems & Intelligent Ideas",
+    "description": "Transforming businesses with AI-driven solutions and expert consulting. Where intelligent systems, intelligent ideas, and people-first innovation converge.",
+    "solutions": {
+      "title": "Solutions",
+      "aiAgents": "AI Agents & Automation",
+      "inventory": "Inventory & Logistics",
+      "finance": "Finance & Billing",
+      "itInfrastructure": "IT Infrastructure"
+    },
+    "company": {
+      "title": "Company",
+      "aboutUs": "About Us",
+      "businessTraining": "Business Training",
+      "partners": "Partners"
+    },
+    "resources": {
+      "title": "Resources",
+      "blog": "Blog (Coming Soon)",
+      "ourProcess": "Our Process",
+      "support": "Support"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy",
+      "gdpr": "GDPR Compliance"
+    },
+    "copyright": "All rights reserved.",
+    "email": "contact@admasits.com",
+    "phone": "+49 176 57725997",
+    "location": "Frankfurt, Germany."
+  },
+  "demoBooking": {
+    "title": "Book a Demo",
+    "step": "Step",
+    "of": "of",
+    "step1": {
+      "title": "Basic Information",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Telephone Number",
+      "companyName": "Company Name",
+      "companyWebsite": "Company Website (optional)",
+      "country": "Country / Region"
+    },
+    "step2": {
+      "title": "Business Details",
+      "teamSize": "Team Size",
+      "industry": "Industry",
+      "jobRole": "Job Role"
+    },
+    "step3": {
+      "title": "Demo Purpose",
+      "automationAreas": "What are you looking to automate?",
+      "challenges": "Describe your current challenges",
+      "timeline": "How soon are you planning to start?"
+    },
+    "step4": {
+      "title": "Scheduling Preferences",
+      "preferredTime": "Preferred Demo Time",
+      "timezone": "Timezone",
+      "additionalNotes": "Additional notes for preparation"
+    },
+    "step5": {
+      "title": "Thank You!",
+      "message": "We've received your demo request. Our team will contact you shortly to schedule your personalized demo."
+    }
+  },
+  "training": {
+    "whyChoose": {
+      "title": "Why Choose Our Training",
+      "expertDepartment": {
+        "title": "Expert Training Department",
+        "description": "Developed and delivered by a dedicated training department of academic professionals, industry experts, and senior consultants."
+      },
+      "practicalApplication": {
+        "title": "Practical, Real-World Application",
+        "description": "Includes real case studies, hands-on exercises, and applied managerial techniques you can use immediately."
+      },
+      "certification": {
+        "title": "Globally Recognized Certification",
+        "description": "Receive an official certificate from AdmasITS — ideal for professional portfolios and career growth."
+      },
+      "skillDevelopment": {
+        "title": "Career-Driven Skill Development",
+        "description": "Gain high-impact managerial, financial, and leadership skills that support promotions and organizational success."
+      }
+    },
+    "modules": {
+      "title": "Training Modules",
+      "subtitle": "Comprehensive curriculum covering {count} essential business management topics",
+      "viewDetails": "View Details",
+      "enrollNow": "Enroll Now"
+    },
+    "cta": {
+      "title": "Ready to Invest in Your Future?",
+      "subtitle": "Join hundreds of professionals who have transformed their careers through our training programs.",
+      "requestInfo": "Request Training Information",
+      "backToHome": "Back to Home"
+    },
+    "enrollment": {
+      "title": "Enrollment Form",
+      "subtitle": "Complete the form below to enroll in our Business Management Training Programs",
+      "startEnrollment": "Start Enrollment Process",
+      "collapseForm": "Collapse Form",
+      "personalInfo": "Personal Information",
+      "companyInfo": "Company / Organization",
+      "optional": "(Optional)",
+      "courseSelection": "Course Selection",
+      "enrollmentPreferences": "Enrollment Preferences",
+      "additionalNotes": "Additional Notes",
+      "consent": {
+        "accurate": "I confirm that the provided information is accurate.",
+        "contact": "I agree to be contacted by AdmasITS."
+      },
+      "requestEnrollment": "Request Enrollment",
+      "success": "Enrollment request submitted successfully."
+    },
+    "request": {
+      "title": "Request Training Information",
+      "subtitle": "Select your training modules and provide your contact information.",
+      "modules": "Training Modules",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "organization": "Organization / Company",
+      "jobTitle": "Job Title",
+      "country": "Country",
+      "message": "Message / Additional Details",
+      "submitRequest": "Submit Request",
+      "success": "Your training request has been received. We'll contact you shortly."
+    }
+  }
+}
