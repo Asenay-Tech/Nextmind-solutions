@@ -75,7 +75,7 @@ export default function ServiceGrid() {
           initial={{ opacity: 0, y: 32, filter: "blur(12px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           className="mb-12 sm:mb-16 text-center"
         >
           <h2 className="mb-3 sm:mb-4 px-2 text-[clamp(1.875rem,5vw,3rem)] font-heading font-bold leading-tight text-white whitespace-normal break-words">
@@ -90,7 +90,7 @@ export default function ServiceGrid() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="mb-12"
         >
           <FilterSection

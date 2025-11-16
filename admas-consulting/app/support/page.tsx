@@ -1,13 +1,6 @@
-import type { Metadata } from "next"
-import SupportPageClient from "./SupportPageClient"
+import { redirect } from "next/navigation"
 
-export const metadata: Metadata = {
-  title: "Support Center | Admas",
-  description:
-    "Get help with onboarding, technical questions, integrations, and enterprise support. Our team is here to guide you.",
-}
-
-export default function SupportPage() {
-  return <SupportPageClient />
+export default function SupportRedirectPage() {
+  redirect("/en/support")
 }
 

@@ -135,7 +135,7 @@ const floatingElements = [
               transition={{
                 duration: 6 + index * 0.5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: [0.42, 0, 0.58, 1],
               }}
             />
           ))}
@@ -145,7 +145,7 @@ const floatingElements = [
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="mx-auto max-w-4xl text-center"
           >
             <motion.h1
@@ -403,7 +403,7 @@ const floatingElements = [
                         <>
                           <motion.div
                             animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                            transition={{ duration: 1, repeat: Infinity, ease: [0, 0, 1, 1] }}
                             className="mr-2 h-4 w-4 rounded-full border-2 border-white border-t-transparent"
                           />
                           {t("form.submitting")}

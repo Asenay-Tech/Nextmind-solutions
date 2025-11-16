@@ -142,7 +142,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                     className="absolute top-full left-0 mt-2 w-56 rounded-xl bg-admas-dark/95 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden z-50"
                   >
                     <div className="py-2">
@@ -182,7 +182,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                     className="absolute top-full left-0 mt-2 w-56 rounded-xl bg-admas-dark/95 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden z-50"
                   >
                     <div className="py-2">

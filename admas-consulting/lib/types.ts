@@ -38,7 +38,7 @@ export interface Category {
 }
 
 export interface BusinessModule {
-  id: string
+  id: string | number
   title: string
   description: string
   duration: string

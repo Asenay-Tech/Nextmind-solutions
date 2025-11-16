@@ -16,10 +16,10 @@ services:
     networks:
       - admas-network
     volumes:
-      # Optional: Mount logs directory if needed
-      - ./logs:/app/logs
+      # Optional: Mount logs directory if needed (note: app runs from /app/admas-consulting)
+      - ./logs:/app/admas-consulting/logs
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/en"]
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/en', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"]
       interval: 30s
       timeout: 10s
       retries: 3

@@ -81,7 +81,7 @@ export default function HowItWorks() {
         scale: [1, 1.05, 1],
       },
     },
-  ] as const
+  ]
   const sectionRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
   const { scrollYProgress } = useScroll({
@@ -210,7 +210,7 @@ export default function HowItWorks() {
                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
-                    ease: "easeOut",
+                    ease: [0.25, 0.1, 0.25, 1],
                   }}
                   whileHover={{ scale: 1.05, y: -4 }}
                   className="group relative"
@@ -234,11 +234,11 @@ export default function HowItWorks() {
                         className={`flex h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${step.gradient} shadow-lg ${
                           (step as any).hasPulse ? "animate-pulse" : ""
                         }`}
-                        animate={step.iconAnimation}
+                        animate={step.iconAnimation as any}
                         transition={{
                           duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut",
+                          repeat: Number.POSITIVE_INFINITY,
+                          ease: [0.42, 0, 0.58, 1],
                         }}
                         style={
                           (step as any).hasPulse

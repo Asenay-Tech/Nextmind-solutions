@@ -178,7 +178,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.anchor ? `${link.href}#${link.anchor}` : link.href}
-                    onClick={(e) => handleSolutionClick(e, link.href, link.anchor)}
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleSolutionClick(e, link.href, link.anchor)}
                     className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
                   >
                     {link.label}
@@ -270,7 +270,7 @@ export default function Footer() {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg bg-admas-dark/95 backdrop-blur-2xl border border-white/10 shadow-2xl"
           >
             <p className="text-white text-sm font-medium">{t("social.comingSoon")}</p>

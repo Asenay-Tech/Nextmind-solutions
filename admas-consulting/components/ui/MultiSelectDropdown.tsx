@@ -86,7 +86,7 @@ export default function MultiSelectDropdown({
                   {option.label}
                   <button
                     type="button"
-                    onClick={(e) => removeOption(option.value, e)}
+                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => removeOption(option.value, e)}
                     className="hover:text-red-400 transition-colors"
                   >
                     <X className="h-3 w-3" />
