@@ -11,6 +11,7 @@ import TrainingCard from "@/components/TrainingCard"
 import TrainingOverlay from "@/components/TrainingOverlay"
 import TrainingRequestModal from "@/components/training/TrainingRequestModal"
 import EnrollmentForm from "@/components/enrollment/EnrollmentForm"
+import BusinessTrainingHeroAnimation from "@/components/animations/BusinessTrainingHeroAnimation"
 import { useTrainingRequestModal } from "@/hooks/useTrainingRequestModal"
 import type { TrainingModule } from "@/lib/trainingData"
 import { trainingModules } from "@/lib/trainingData"
@@ -29,7 +30,7 @@ const benefits = [
   {
     icon: Award,
     title: "Globally Recognized Certification",
-    description: "Receive an official certificate from AdmasITS — ideal for professional portfolios and career growth.",
+    description: "Receive an official certificate from Admas — ideal for professional portfolios and career growth.",
   },
   {
     icon: TrendingUp,
@@ -84,9 +85,10 @@ export default function BusinessManagementPage() {
       <Header />
 
       <section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-admas-dark via-admas-purple-dark to-admas-purple opacity-50" />
+        <BusinessTrainingHeroAnimation />
+        <div className="absolute inset-0 bg-gradient-to-br from-admas-dark via-admas-purple-dark to-admas-purple opacity-50 z-[1]" />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-[2]">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
               Business Management <span className="gradient-text">Training Programs</span>
@@ -207,3 +209,4 @@ export default function BusinessManagementPage() {
     </main>
   )
 }
+

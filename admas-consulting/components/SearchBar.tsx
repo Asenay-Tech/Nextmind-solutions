@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 import { Search } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-import { Input } from "./ui/input"
+import { Input } from "@/components/ui/input"
 
 interface SearchBarProps {
   value: string
@@ -17,8 +18,10 @@ interface SearchBarProps {
 export default function SearchBar({
   value,
   onChange,
-  placeholder = "Search AI Agents, apps, roles, use cases...",
+  placeholder,
 }: SearchBarProps) {
+  const t = useTranslations("services")
+  const defaultPlaceholder = placeholder || t("searchPlaceholder")
   const [isFocused, setIsFocused] = useState(false)
 
   return (
@@ -38,7 +41,7 @@ export default function SearchBar({
         type="text"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        placeholder={placeholder}
+        placeholder={defaultPlaceholder}
         className={cn(
           "w-full glass-filter py-4 sm:py-5 md:py-6 pl-12 sm:pl-14 md:pl-16 pr-4 sm:pr-5 text-sm sm:text-base md:text-lg text-white placeholder:text-gray-200",
           "bg-transparent relative z-10 rounded-xl sm:rounded-2xl focus-visible:ring-2 focus-visible:ring-admas-purple-light focus-visible:outline-none",

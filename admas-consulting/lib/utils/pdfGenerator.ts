@@ -3,7 +3,7 @@ import type { TrainingModule } from "@/lib/trainingData"
 import { parseTrainingModule, type StructuredTopic } from "./trainingParser"
 
 const FOOTER_TEXT = {
-  company: "AdmasITS – AI-Driven Systems & Intelligent Ideas",
+  company: "Admas",
   name: "Prof. Dr. Sebhatleab Tewolde",
   title: "Secretary, Co-Founder & Head of Department of Business Training",
   location: "Frankfurt, Germany",
@@ -157,7 +157,7 @@ export function generateTrainingModulePDF(module: TrainingModule): void {
   doc.setFontSize(18)
   doc.setTextColor(127, 90, 255) // Purple color
   doc.setFont("helvetica", "bold")
-  doc.text("AdmasITS – Training Module Outline", pageWidth / 2, topMargin, { align: "center" })
+  doc.text("Admas – Training Module Outline", pageWidth / 2, topMargin, { align: "center" })
 
   // Header gradient line
   const gradientY = topMargin + 5

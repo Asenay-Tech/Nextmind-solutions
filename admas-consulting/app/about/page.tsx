@@ -85,7 +85,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number], // cubic-bezier equivalent to easeOut (type-safe)
     },
   },
 }
@@ -104,7 +104,7 @@ export default function AboutPage() {
           animate={{
             backgroundPosition: ["0% 0%", "22% 8%", "0% 0%"],
           }}
-          transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 16, repeat: Infinity, ease: [0, 0, 1, 1] }}
           style={{
             backgroundImage:
               "linear-gradient(115deg, rgba(96,165,250,0.08) 0%, rgba(138,99,241,0.18) 35%, transparent 70%), linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(96,165,250,0.06) 1px, transparent 1px)",
@@ -116,7 +116,7 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
@@ -129,7 +129,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-300 leading-relaxed"
             >
-              AdmasITS delivers cutting-edge solutions in business consulting, AI-driven systems, and
+              Admas delivers cutting-edge solutions in business consulting, AI-driven systems, and
               professional training. We bridge technology and strategy to help organizations operate
               smarter, faster, and more efficiently.
             </motion.p>

@@ -11,7 +11,7 @@ import FilterSection, { CategoryFilterType } from "./FilterSection"
 import ServiceCard from "./ServiceCard"
 
 export default function ServiceGrid() {
-  const t = useTranslations('services')
+  const t = useTranslations("services")
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] =
     useState<CategoryFilterType>("All")
@@ -79,10 +79,10 @@ export default function ServiceGrid() {
           className="mb-12 sm:mb-16 text-center"
         >
           <h2 className="mb-3 sm:mb-4 px-2 text-[clamp(1.875rem,5vw,3rem)] font-heading font-bold leading-tight text-white whitespace-normal break-words">
-            {t('title')}
+            {t("title")}
           </h2>
           <p className="mx-auto max-w-3xl px-2 text-[clamp(1rem,2.5vw,1.25rem)] leading-relaxed text-gray-300 whitespace-normal break-words">
-            {t('subtitle')}
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -115,14 +115,14 @@ export default function ServiceGrid() {
             className="py-16 text-center"
           >
             <div className="mb-4 text-lg text-gray-400 whitespace-normal break-words">
-              {t('noResults')}
+              {t("noResults")}
             </div>
             <button
               onClick={handleClearFilters}
               className="font-medium text-admas-purple-light transition-colors hover:text-admas-cyan whitespace-normal break-words"
               type="button"
             >
-              {t('clearFilters')}
+              {t("clearFilters")}
             </button>
           </motion.div>
         )}

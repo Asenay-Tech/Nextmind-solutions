@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SupportPageClient from "./SupportPageClient"
 
 export const metadata: Metadata = {
-  title: "Support Center | AdmasITS",
+  title: "Support Center | Admas",
   description:
     "Get help with onboarding, technical questions, integrations, and enterprise support. Our team is here to guide you.",
 }
@@ -10,3 +10,4 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return <SupportPageClient />
 }
+

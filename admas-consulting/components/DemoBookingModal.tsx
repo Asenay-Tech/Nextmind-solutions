@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X, ChevronRight, ChevronLeft, CheckCircle2, Calendar, Clock, Building2, Users, Briefcase, Target, Globe } from "lucide-react"
 import { useTranslations } from "next-intl"
 
-import { Button } from "./ui/button"
-import { Input } from "./ui/input"
-import { Textarea } from "./ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 
 interface DemoBookingModalProps {
@@ -40,27 +40,51 @@ interface FormData {
   notes: string
 }
 
-const teamSizes = ["1-10", "11-50", "51-200", "200+"]
-const industries = ["Tech", "Construction", "Logistics", "Finance", "Retail", "Government", "Other"]
-const jobRoles = ["Founder/CEO", "Manager", "Engineer", "Operations", "Other"]
-const automationAreas = [
-  "Customer Support",
-  "Internal Workflows",
-  "Finance & Billing",
-  "Inventory/Logistics",
-  "AI Agents",
-  "All of the Above"
-]
-const timelines = ["Immediately", "This Month", "Within 3 Months", "Just Exploring"]
-const timezones = [
-  "UTC-12", "UTC-11", "UTC-10", "UTC-9", "UTC-8", "UTC-7", "UTC-6", "UTC-5",
-  "UTC-4", "UTC-3", "UTC-2", "UTC-1", "UTC+0", "UTC+1", "UTC+2", "UTC+3",
-  "UTC+4", "UTC+5", "UTC+6", "UTC+7", "UTC+8", "UTC+9", "UTC+10", "UTC+11", "UTC+12"
-]
-
 export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalProps) {
-  const t = useTranslations('demoBooking')
-  const tCommon = useTranslations('common')
+  const t = useTranslations("booking")
+  const tCommon = useTranslations("common")
+  
+  const teamSizes = [
+    t("teamSizes.1-10"),
+    t("teamSizes.11-50"),
+    t("teamSizes.51-200"),
+    t("teamSizes.200+")
+  ]
+  const industries = [
+    t("industries.tech"),
+    t("industries.construction"),
+    t("industries.logistics"),
+    t("industries.finance"),
+    t("industries.retail"),
+    t("industries.government"),
+    t("industries.other")
+  ]
+  const jobRoles = [
+    t("jobRoles.founder"),
+    t("jobRoles.manager"),
+    t("jobRoles.engineer"),
+    t("jobRoles.operations"),
+    t("jobRoles.other")
+  ]
+  const automationAreas = [
+    t("automationAreas.customerSupport"),
+    t("automationAreas.internalWorkflows"),
+    t("automationAreas.financeBilling"),
+    t("automationAreas.inventoryLogistics"),
+    t("automationAreas.aiAgents"),
+    t("automationAreas.all")
+  ]
+  const timelines = [
+    t("timelines.immediately"),
+    t("timelines.thisMonth"),
+    t("timelines.within3Months"),
+    t("timelines.justExploring")
+  ]
+  const timezones = [
+    "UTC-12", "UTC-11", "UTC-10", "UTC-9", "UTC-8", "UTC-7", "UTC-6", "UTC-5",
+    "UTC-4", "UTC-3", "UTC-2", "UTC-1", "UTC+0", "UTC+1", "UTC+2", "UTC+3",
+    "UTC+4", "UTC+5", "UTC+6", "UTC+7", "UTC+8", "UTC+9", "UTC+10", "UTC+11", "UTC+12"
+  ]
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
@@ -359,10 +383,10 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                 <div className="flex items-center justify-between gap-3">
                   <div className="min-w-0 flex-1">
                     <h2 className="text-xl sm:text-2xl font-heading font-bold text-white mb-0.5 sm:mb-1 truncate">
-                      {t('title')}
+                      {t("title")}
                     </h2>
                     <p className="text-xs sm:text-sm text-gray-400">
-                      {t('step')} {currentStep} {t('of')} 5
+                      {t("stepOf", { current: currentStep, total: 5 })}
                     </p>
                   </div>
                   <button
@@ -410,23 +434,23 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                           <Users className="h-5 w-5 text-admas-purple-light" />
                         </div>
                         <h3 className="text-xl font-heading font-bold text-white">
-                          Basic Information
+                          {t("steps.1.title")}
                         </h3>
                       </div>
 
                       <div className="space-y-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-2">
-                            Full Name <span className="text-red-400">*</span>
+                            {t("steps.1.fullName")} <span className="text-red-400">{tCommon("required")}</span>
                           </label>
                           <Input
                             value={formData.fullName}
                             onChange={(e) => updateField("fullName", e.target.value)}
-                            placeholder="John Doe"
+                            placeholder={t("steps.1.fullNamePlaceholder")}
                             className={errors.fullName ? "border-red-500/50" : ""}
                           />
                           {errors.fullName && (
-                            <p className="mt-1 text-xs text-red-400">{errors.fullName}</p>
+                            <p className="mt-1 text-xs text-red-400">{t("steps.1.fullNameRequired")}</p>
                           )}
                         </div>
 
@@ -467,44 +491,44 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                              Company Name <span className="text-red-400">*</span>
+                              {t("steps.1.companyName")} <span className="text-red-400">{tCommon("required")}</span>
                             </label>
                             <Input
                               value={formData.companyName}
                               onChange={(e) => updateField("companyName", e.target.value)}
-                              placeholder="Acme Inc."
+                              placeholder={t("steps.1.companyNamePlaceholder")}
                               className={errors.companyName ? "border-red-500/50" : ""}
                             />
                             {errors.companyName && (
-                              <p className="mt-1 text-xs text-red-400">{errors.companyName}</p>
+                              <p className="mt-1 text-xs text-red-400">{t("steps.1.companyNameRequired")}</p>
                             )}
                           </div>
 
                           <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                              Company Website
+                              {t("steps.1.companyWebsite")}
                             </label>
                             <Input
                               type="url"
                               value={formData.companyWebsite}
                               onChange={(e) => updateField("companyWebsite", e.target.value)}
-                              placeholder="https://company.com"
+                              placeholder={t("steps.1.companyWebsitePlaceholder")}
                             />
                           </div>
                         </div>
 
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-2">
-                            Country / Region <span className="text-red-400">*</span>
+                            {t("steps.1.country")} <span className="text-red-400">{tCommon("required")}</span>
                           </label>
                           <Input
                             value={formData.country}
                             onChange={(e) => updateField("country", e.target.value)}
-                            placeholder="United States"
+                            placeholder={t("steps.1.countryPlaceholder")}
                             className={errors.country ? "border-red-500/50" : ""}
                           />
                           {errors.country && (
-                            <p className="mt-1 text-xs text-red-400">{errors.country}</p>
+                            <p className="mt-1 text-xs text-red-400">{t("steps.1.countryRequired")}</p>
                           )}
                         </div>
                       </div>
@@ -524,14 +548,14 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                           <Building2 className="h-5 w-5 text-admas-purple-light" />
                         </div>
                         <h3 className="text-xl font-heading font-bold text-white">
-                          Business Details
+                          {t("steps.2.title")}
                         </h3>
                       </div>
 
                       <div className="space-y-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-2">
-                            Team Size <span className="text-red-400">*</span>
+                            {t("steps.2.teamSize")} <span className="text-red-400">{tCommon("required")}</span>
                           </label>
                           <select
                             value={formData.teamSize}
@@ -542,22 +566,22 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                               errors.teamSize ? "border-red-500/50" : "border-white/20"
                             )}
                           >
-                            <option value="">Select team size</option>
+                            <option value="">{t("steps.2.teamSizePlaceholder")}</option>
                             {teamSizes.map((size) => (
                               <option key={size} value={size} className="bg-admas-dark">
                                 {size}
                               </option>
                             ))}
                           </select>
-                          {errors.teamSize && (
-                            <p className="mt-1 text-xs text-red-400">{errors.teamSize}</p>
-                          )}
+                            {errors.teamSize && (
+                              <p className="mt-1 text-xs text-red-400">{t("steps.2.teamSizeRequired")}</p>
+                            )}
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                              Industry <span className="text-red-400">*</span>
+                              {t("steps.2.industry")} <span className="text-red-400">{tCommon("required")}</span>
                             </label>
                             <select
                               value={formData.industry}
@@ -568,7 +592,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                                 errors.industry ? "border-red-500/50" : "border-white/20"
                               )}
                             >
-                              <option value="">Select industry</option>
+                              <option value="">{t("steps.2.industryPlaceholder")}</option>
                               {industries.map((industry) => (
                                 <option key={industry} value={industry} className="bg-admas-dark">
                                   {industry}
@@ -576,13 +600,13 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                               ))}
                             </select>
                             {errors.industry && (
-                              <p className="mt-1 text-xs text-red-400">{errors.industry}</p>
+                              <p className="mt-1 text-xs text-red-400">{t("steps.2.industryRequired")}</p>
                             )}
                           </div>
 
                           <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                              Job Role <span className="text-red-400">*</span>
+                              {t("steps.2.jobRole")} <span className="text-red-400">{tCommon("required")}</span>
                             </label>
                             <select
                               value={formData.jobRole}
@@ -593,7 +617,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                                 errors.jobRole ? "border-red-500/50" : "border-white/20"
                               )}
                             >
-                              <option value="">Select job role</option>
+                              <option value="">{t("steps.2.jobRolePlaceholder")}</option>
                               {jobRoles.map((role) => (
                                 <option key={role} value={role} className="bg-admas-dark">
                                   {role}
@@ -601,7 +625,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                               ))}
                             </select>
                             {errors.jobRole && (
-                              <p className="mt-1 text-xs text-red-400">{errors.jobRole}</p>
+                              <p className="mt-1 text-xs text-red-400">{t("steps.2.jobRoleRequired")}</p>
                             )}
                           </div>
                         </div>
@@ -622,14 +646,14 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                           <Target className="h-5 w-5 text-admas-purple-light" />
                         </div>
                         <h3 className="text-xl font-heading font-bold text-white">
-                          Demo Purpose
+                          {t("steps.3.title")}
                         </h3>
                       </div>
 
                       <div className="space-y-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-3">
-                            What are you looking to automate? <span className="text-red-400">*</span>
+                            {t("steps.3.automationAreas")} <span className="text-red-400">{tCommon("required")}</span>
                           </label>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {automationAreas.map((area) => (
@@ -667,12 +691,12 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
 
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-2">
-                            Describe your current challenges
+                            {t("steps.3.challenges")}
                           </label>
                           <Textarea
                             value={formData.challenges}
                             onChange={(e) => updateField("challenges", e.target.value)}
-                            placeholder="Tell us about the challenges you're facing..."
+                            placeholder={t("steps.3.challengesPlaceholder")}
                             rows={4}
                             className="resize-none"
                           />
@@ -680,7 +704,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
 
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-2">
-                            How soon are you planning to start? <span className="text-red-400">*</span>
+                            {t("steps.3.timeline")} <span className="text-red-400">{tCommon("required")}</span>
                           </label>
                           <select
                             value={formData.timeline}
@@ -691,7 +715,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                               errors.timeline ? "border-red-500/50" : "border-white/20"
                             )}
                           >
-                            <option value="">Select timeline</option>
+                            <option value="">{t("steps.3.timelinePlaceholder")}</option>
                             {timelines.map((timeline) => (
                               <option key={timeline} value={timeline} className="bg-admas-dark">
                                 {timeline}
@@ -699,7 +723,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                             ))}
                           </select>
                           {errors.timeline && (
-                            <p className="mt-1 text-xs text-red-400">{errors.timeline}</p>
+                            <p className="mt-1 text-xs text-red-400">{t("steps.3.timelineRequired")}</p>
                           )}
                         </div>
                       </div>
@@ -719,7 +743,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                           <Calendar className="h-5 w-5 text-admas-purple-light" />
                         </div>
                         <h3 className="text-xl font-heading font-bold text-white">
-                          Scheduling Preferences
+                          {t("steps.4.title")}
                         </h3>
                       </div>
 
@@ -727,7 +751,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                              Preferred Demo Time <span className="text-red-400">*</span>
+                              {t("steps.4.preferredTime")} <span className="text-red-400">{tCommon("required")}</span>
                             </label>
                             <Input
                               type="datetime-local"
@@ -736,13 +760,13 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                               className={errors.preferredTime ? "border-red-500/50" : ""}
                             />
                             {errors.preferredTime && (
-                              <p className="mt-1 text-xs text-red-400">{errors.preferredTime}</p>
+                              <p className="mt-1 text-xs text-red-400">{t("steps.4.preferredTimeRequired")}</p>
                             )}
                           </div>
 
                           <div>
                             <label className="block text-sm font-medium text-gray-300 mb-2">
-                              Timezone <span className="text-red-400">*</span>
+                              {t("steps.4.timezone")} <span className="text-red-400">{tCommon("required")}</span>
                             </label>
                             <select
                               value={formData.timezone}
@@ -753,7 +777,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                                 errors.timezone ? "border-red-500/50" : "border-white/20"
                               )}
                             >
-                              <option value="">Select timezone</option>
+                              <option value="">{t("steps.4.timezonePlaceholder")}</option>
                               {timezones.map((tz) => (
                                 <option key={tz} value={tz} className="bg-admas-dark">
                                   {tz}
@@ -761,19 +785,19 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                               ))}
                             </select>
                             {errors.timezone && (
-                              <p className="mt-1 text-xs text-red-400">{errors.timezone}</p>
+                              <p className="mt-1 text-xs text-red-400">{t("steps.4.timezoneRequired")}</p>
                             )}
                           </div>
                         </div>
 
                         <div>
                           <label className="block text-sm font-medium text-gray-300 mb-2">
-                            Additional notes for preparation
+                            {t("steps.4.notes")}
                           </label>
                           <Textarea
                             value={formData.notes}
                             onChange={(e) => updateField("notes", e.target.value)}
-                            placeholder="Any specific topics or questions you'd like us to cover..."
+                            placeholder={t("steps.4.notesPlaceholder")}
                             rows={4}
                             className="resize-none"
                           />
@@ -803,18 +827,18 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                       </motion.div>
 
                       <h3 className="text-2xl font-heading font-bold text-white mb-3">
-                        Demo Request Submitted!
+                        {t("steps.5.title")}
                       </h3>
                       <p className="text-gray-300 mb-6 max-w-md mx-auto">
-                        Thank you for your interest. We'll review your request and send you a confirmation email shortly with scheduling details.
+                        {t("steps.5.message")}
                       </p>
 
                       <div className="glass-card p-6 max-w-md mx-auto mb-6 text-left">
-                        <h4 className="text-sm font-semibold text-white mb-3">Summary</h4>
+                        <h4 className="text-sm font-semibold text-white mb-3">{t("steps.5.summary")}</h4>
                         <div className="space-y-2 text-sm text-gray-300">
-                          <p><span className="text-gray-400">Name:</span> {formData.fullName}</p>
-                          <p><span className="text-gray-400">Company:</span> {formData.companyName}</p>
-                          <p><span className="text-gray-400">Timeline:</span> {formData.timeline}</p>
+                          <p><span className="text-gray-400">{t("steps.5.name")}:</span> {formData.fullName}</p>
+                          <p><span className="text-gray-400">{t("steps.5.company")}:</span> {formData.companyName}</p>
+                          <p><span className="text-gray-400">{t("steps.5.timeline")}:</span> {formData.timeline}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -832,8 +856,8 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                       className="border-white/20 bg-white/5 text-white hover:bg-white/10 text-xs sm:text-sm px-2 sm:px-3 md:px-4 py-1.5 sm:py-2"
                     >
                       <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-                      <span className="hidden sm:inline">{currentStep === 1 ? "Cancel" : "Previous"}</span>
-                      <span className="sm:hidden">{currentStep === 1 ? "Cancel" : "Prev"}</span>
+                      <span className="hidden sm:inline">{currentStep === 1 ? t("cancel") : t("previous")}</span>
+                      <span className="sm:hidden">{currentStep === 1 ? t("cancel") : t("previous")}</span>
                     </Button>
 
                     <div className="hidden sm:flex items-center gap-1.5 sm:gap-2">
@@ -856,7 +880,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                       onClick={currentStep === 4 ? handleSubmit : handleNext}
                       className="btn-gradient text-xs sm:text-sm px-3 sm:px-4 md:px-6 py-1.5 sm:py-2"
                     >
-                      {currentStep === 4 ? "Submit" : "Next"}
+                      {currentStep === 4 ? t("submit") : t("next")}
                       <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2" />
                     </Button>
                   </div>
@@ -867,7 +891,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                 <div className="border-t border-white/10 p-6 bg-gradient-to-r from-admas-dark/50 to-admas-purple-dark/30">
                   <div className="flex justify-center">
                     <Button onClick={handleClose} className="btn-gradient">
-                      Close
+                      {t("close")}
                     </Button>
                   </div>
                 </div>

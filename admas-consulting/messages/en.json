@@ -1,158 +1,129 @@
 {
-  "common": {
-    "loading": "Loading...",
-    "error": "An error occurred",
-    "close": "Close",
-    "cancel": "Cancel",
-    "submit": "Submit",
-    "next": "Next",
-    "previous": "Previous",
-    "back": "Back",
-    "save": "Save",
-    "delete": "Delete",
-    "edit": "Edit",
-    "search": "Search",
-    "filter": "Filter",
-    "clear": "Clear",
-    "all": "All",
-    "viewMore": "View More",
-    "learnMore": "Learn More",
-    "getStarted": "Get Started",
-    "contactUs": "Contact Us"
-  },
   "nav": {
     "home": "Home",
     "solutions": "Solutions",
     "businessTraining": "Business Training",
     "company": "Company",
     "resources": "Resources",
-    "login": "Login",
-    "getStarted": "Get Started",
     "aboutUs": "About Us",
     "partners": "Partners",
     "support": "Support",
     "ourProcess": "Our Process",
-    "blog": "Blog",
-    "blogComingSoon": "Blog (Coming Soon)"
-  },
-  "header": {
-    "home": "Home",
-    "solutions": "Solutions",
-    "businessTraining": "Business Training",
-    "company": "Company",
-    "resources": "Resources",
+    "blog": "Blog (Coming Soon)",
     "login": "Login",
-    "getStarted": "Get Started",
-    "aboutUs": "About Us",
-    "partners": "Partners",
-    "support": "Support",
-    "ourProcess": "Our Process",
-    "blog": "Blog",
-    "blogComingSoon": "Blog (Coming Soon)"
+    "getStarted": "Get Started"
   },
   "hero": {
-    "badge": "AI-Powered Business Solutions",
-    "title": "Where Intelligent Systems Meet Immersive Intelligent Ideas",
-    "titlePart1": "Where",
-    "titlePart2": "Intelligent Systems",
-    "titlePart3": "Meet Immersive",
-    "titlePart4": "Intelligent Ideas",
-    "subtitle": "Unlock autonomous decision-making and orchestrate complex workflows with human-inspired AI. AdmasITS blends research-grade intelligence with enterprise execution.",
-    "exploreSolutions": "Explore Solutions",
-    "bookDemo": "Book a Demo"
+    "heading": "Where Intelligent Systems Meet Immersive Intelligent Ideas",
+    "headingHighlight1": "Intelligent Systems",
+    "headingHighlight2": "Intelligent Ideas",
+    "subheading": "Unlock autonomous decision-making and orchestrate complex workflows with human-inspired AI. Admas blends research-grade intelligence with enterprise execution.",
+    "cta1": "Explore Solutions",
+    "cta2": "Book a Demo",
+    "typingPhrases": {
+      "0": "AI-Powered Business Solutions",
+      "1": "Autonomous Intelligence for Teams",
+      "2": "Adaptive Workflows at Scale"
+    }
   },
   "services": {
     "title": "Our AI Agent Solutions",
     "subtitle": "Comprehensive AI Agent–powered solutions tailored to transform your business operations",
     "noResults": "No solutions found matching your criteria",
-    "clearFilters": "Clear filters and show all"
-  },
-  "whyChooseUs": {
-    "title": "Why Choose AdmasITS",
-    "subtitle": "We combine cutting-edge AI technology with deep business expertise to deliver solutions that truly transform operations",
-    "enterpriseSecurity": {
-      "title": "Enterprise-Grade Security",
-      "description": "Bank-level encryption and compliance with international data protection standards."
-    },
-    "rapidImplementation": {
-      "title": "Rapid Implementation",
-      "description": "Get up and running in days, not months, with our proven deployment methodology."
-    },
-    "expertTeam": {
-      "title": "Expert Team",
-      "description": "Work with seasoned consultants who understand both AI technology and business operations."
-    },
-    "measurableROI": {
-      "title": "Measurable ROI",
-      "description": "Track clear metrics and see tangible improvements in efficiency and cost savings."
-    },
-    "support24x7": {
-      "title": "24/7 Support",
-      "description": "Round-the-clock technical support and monitoring to keep your systems running smoothly."
-    },
-    "industryExpertise": {
-      "title": "Industry Expertise",
-      "description": "Deep expertise across logistics, finance, hospitality, and IT sectors with proven methodologies and best practices."
-    }
+    "clearFilters": "Clear filters and show all",
+    "clearAllFilters": "Clear all filters",
+    "searchPlaceholder": "Search AI Agents, apps, roles, use cases..."
   },
   "howItWorks": {
     "title": "How We Work",
     "subtitle": "Our six-step lifecycle ensures every automation we build is measurable, scalable, and continuously improving.",
-    "discover": {
-      "title": "Discover",
-      "description": "Understand business goals, workflows, and automation opportunities."
+    "steps": {
+      "1": {
+        "title": "Discover",
+        "description": "Understand business goals, workflows, and automation opportunities."
+      },
+      "2": {
+        "title": "Analyze",
+        "description": "Evaluate data and systems to identify inefficiencies and optimization opportunities."
+      },
+      "3": {
+        "title": "Design",
+        "description": "Create tailored AI and automation architecture aligned with business strategy."
+      },
+      "4": {
+        "title": "Develop",
+        "description": "Build and integrate scalable AI workflows and systems."
+      },
+      "5": {
+        "title": "Deploy",
+        "description": "Configure, test, and launch automation on reliable hosting infrastructure."
+      },
+      "6": {
+        "title": "Optimize",
+        "description": "Continuously monitor, retrain models, and improve system performance."
+      }
     },
-    "analyze": {
-      "title": "Analyze",
-      "description": "Evaluate data and systems to identify inefficiencies and optimization opportunities."
-    },
-    "design": {
-      "title": "Design",
-      "description": "Create tailored AI and automation architecture aligned with business strategy."
-    },
-    "develop": {
-      "title": "Develop",
-      "description": "Build and integrate scalable AI workflows and systems."
-    },
-    "deploy": {
-      "title": "Deploy",
-      "description": "Configure, test, and launch automation on reliable hosting infrastructure."
-    },
-    "optimize": {
-      "title": "Optimize",
-      "description": "Continuously monitor, retrain models, and improve system performance."
+    "progress": {
+      "start": "Discovery",
+      "end": "Optimization",
+      "step1": "Step 1",
+      "step2": "Step 2",
+      "step3": "Step 3",
+      "step4": "Step 4",
+      "step5": "Step 5",
+      "step6": "Step 6"
     }
   },
-  "cta": {
-    "title": "Ready to Transform Your Business?",
-    "subtitle": "Schedule a free consultation with our experts and discover how AI can revolutionize your operations.",
-    "getStartedToday": "Get Started Today",
-    "bookDemo": "Book a Demo",
-    "expertSupport": "Expert Support",
-    "customSolutions": "Custom Solutions",
-    "globalReach": "Global",
-    "reachScale": "Reach & Scale"
+  "whyChooseUs": {
+    "title": "Why Choose Admas",
+    "subtitle": "We combine cutting-edge AI technology with deep business expertise to deliver solutions that truly transform operations",
+    "benefits": {
+      "security": {
+        "title": "Enterprise-Grade Security",
+        "description": "Bank-level encryption and compliance with international data protection standards."
+      },
+      "implementation": {
+        "title": "Rapid Implementation",
+        "description": "Get up and running in days, not months, with our proven deployment methodology."
+      },
+      "team": {
+        "title": "Expert Team",
+        "description": "Work with seasoned consultants who understand both AI technology and business operations."
+      },
+      "roi": {
+        "title": "Measurable ROI",
+        "description": "Track clear metrics and see tangible improvements in efficiency and cost savings."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Round-the-clock technical support and monitoring to keep your systems running smoothly."
+      },
+      "expertise": {
+        "title": "Industry Expertise",
+        "description": "Deep expertise across logistics, finance, hospitality, and IT sectors with proven methodologies and best practices."
+      }
+    }
   },
   "footer": {
-    "tagline": "AI-Driven Systems & Intelligent Ideas",
     "description": "Transforming businesses with AI-driven solutions and expert consulting. Where intelligent systems, intelligent ideas, and people-first innovation converge.",
+    "copyright": "© {year} Admas. All rights reserved.",
     "solutions": {
       "title": "Solutions",
       "aiAgents": "AI Agents & Automation",
       "inventory": "Inventory & Logistics",
       "finance": "Finance & Billing",
-      "itInfrastructure": "IT Infrastructure"
+      "infrastructure": "IT Infrastructure"
     },
     "company": {
       "title": "Company",
-      "aboutUs": "About Us",
-      "businessTraining": "Business Training",
+      "about": "About Us",
+      "training": "Business Training",
       "partners": "Partners"
     },
     "resources": {
       "title": "Resources",
       "blog": "Blog (Coming Soon)",
-      "ourProcess": "Our Process",
+      "process": "Our Process",
       "support": "Support"
     },
     "legal": {
@@ -162,110 +133,327 @@
       "cookies": "Cookie Policy",
       "gdpr": "GDPR Compliance"
     },
-    "copyright": "All rights reserved.",
-    "email": "contact@admasits.com",
-    "phone": "+49 176 57725997",
-    "location": "Frankfurt, Germany."
+    "social": {
+      "comingSoon": "Coming soon"
+    }
   },
-  "demoBooking": {
+  "booking": {
     "title": "Book a Demo",
-    "step": "Step",
-    "of": "of",
-    "step1": {
-      "title": "Basic Information",
-      "fullName": "Full Name",
-      "email": "Email Address",
-      "phone": "Telephone Number",
-      "companyName": "Company Name",
-      "companyWebsite": "Company Website (optional)",
-      "country": "Country / Region"
+    "stepOf": "Step {current} of {total}",
+    "close": "Close",
+    "cancel": "Cancel",
+    "previous": "Previous",
+    "next": "Next",
+    "submit": "Submit",
+    "prev": "Prev",
+    "steps": {
+      "1": {
+        "title": "Basic Information",
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "John Doe",
+        "fullNameRequired": "Full name is required",
+        "email": "Email Address",
+        "emailPlaceholder": "john@company.com",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address",
+        "phone": "Phone Number",
+        "phonePlaceholder": "+1 (555) 000-0000",
+        "phoneRequired": "Phone number is required",
+        "companyName": "Company Name",
+        "companyNamePlaceholder": "Acme Inc.",
+        "companyNameRequired": "Company name is required",
+        "companyWebsite": "Company Website",
+        "companyWebsitePlaceholder": "https://company.com",
+        "country": "Country / Region",
+        "countryPlaceholder": "United States",
+        "countryRequired": "Country is required"
+      },
+      "2": {
+        "title": "Business Details",
+        "teamSize": "Team Size",
+        "teamSizePlaceholder": "Select team size",
+        "teamSizeRequired": "Team size is required",
+        "industry": "Industry",
+        "industryPlaceholder": "Select industry",
+        "industryRequired": "Industry is required",
+        "jobRole": "Job Role",
+        "jobRolePlaceholder": "Select job role",
+        "jobRoleRequired": "Job role is required"
+      },
+      "3": {
+        "title": "Demo Purpose",
+        "automationAreas": "What are you looking to automate?",
+        "automationAreasRequired": "Please select at least one area",
+        "challenges": "Describe your current challenges",
+        "challengesPlaceholder": "Tell us about the challenges you're facing...",
+        "timeline": "How soon are you planning to start?",
+        "timelinePlaceholder": "Select timeline",
+        "timelineRequired": "Timeline is required"
+      },
+      "4": {
+        "title": "Scheduling Preferences",
+        "preferredTime": "Preferred Demo Time",
+        "preferredTimeRequired": "Preferred time is required",
+        "timezone": "Timezone",
+        "timezonePlaceholder": "Select timezone",
+        "timezoneRequired": "Timezone is required",
+        "notes": "Additional notes for preparation",
+        "notesPlaceholder": "Any specific topics or questions you'd like us to cover..."
+      },
+      "5": {
+        "title": "Demo Request Submitted!",
+        "message": "Thank you for your interest. We'll review your request and send you a confirmation email shortly with scheduling details.",
+        "summary": "Summary",
+        "name": "Name",
+        "company": "Company",
+        "timeline": "Timeline"
+      }
     },
-    "step2": {
-      "title": "Business Details",
-      "teamSize": "Team Size",
-      "industry": "Industry",
-      "jobRole": "Job Role"
+    "automationAreas": {
+      "customerSupport": "Customer Support",
+      "internalWorkflows": "Internal Workflows",
+      "financeBilling": "Finance & Billing",
+      "inventoryLogistics": "Inventory/Logistics",
+      "aiAgents": "AI Agents",
+      "all": "All of the Above"
     },
-    "step3": {
-      "title": "Demo Purpose",
-      "automationAreas": "What are you looking to automate?",
-      "challenges": "Describe your current challenges",
-      "timeline": "How soon are you planning to start?"
+    "teamSizes": {
+      "1-10": "1-10",
+      "11-50": "11-50",
+      "51-200": "51-200",
+      "200+": "200+"
     },
-    "step4": {
-      "title": "Scheduling Preferences",
-      "preferredTime": "Preferred Demo Time",
-      "timezone": "Timezone",
-      "additionalNotes": "Additional notes for preparation"
+    "industries": {
+      "tech": "Tech",
+      "construction": "Construction",
+      "logistics": "Logistics",
+      "finance": "Finance",
+      "retail": "Retail",
+      "government": "Government",
+      "other": "Other"
     },
-    "step5": {
-      "title": "Thank You!",
-      "message": "We've received your demo request. Our team will contact you shortly to schedule your personalized demo."
+    "jobRoles": {
+      "founder": "Founder/CEO",
+      "manager": "Manager",
+      "engineer": "Engineer",
+      "operations": "Operations",
+      "other": "Other"
+    },
+    "timelines": {
+      "immediately": "Immediately",
+      "thisMonth": "This Month",
+      "within3Months": "Within 3 Months",
+      "justExploring": "Just Exploring"
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "Partner with",
+      "subtitle": "Join forces with us to deliver intelligent, data-driven business solutions. We collaborate with organizations, agencies, and consultants to co-develop innovative, AI-powered systems and business automation."
+    },
+    "cta": {
+      "primary": "Start Partnership Discussion",
+      "secondary": "Start a Project"
+    },
+    "areas": {
+      "title": "Partnership Areas",
+      "subtitle": "Explore our key collaboration focus areas",
+      "aiAutomation": {
+        "title": "AI & Automation Solutions",
+        "description": "Joint projects for intelligent agents, predictive systems, and automation workflows."
+      },
+      "businessConsulting": {
+        "title": "Business Consulting & Training",
+        "description": "Co-developing corporate learning, analytics dashboards, and performance systems."
+      },
+      "itInfrastructure": {
+        "title": "IT Infrastructure & Cloud Projects",
+        "description": "Collaboration on cloud migration, monitoring, and cybersecurity solutions."
+      },
+      "industrySpecific": {
+        "title": "Industry-Specific Solutions",
+        "description": "Tailored projects for construction, insurance, logistics, and finance."
+      },
+      "erpSystems": {
+        "title": "ERP Systems & Company Setup",
+        "description": "We can develop and deploy entire ERP systems and handle full company project setups, integrating accounting, HR, workflow, and automation modules."
+      }
+    },
+    "models": {
+      "title": "Flexible Collaboration Models",
+      "subtitle": "Choose the partnership structure that works best for your organization",
+      "strategic": {
+        "title": "Strategic Partnerships",
+        "description": "Long-term joint innovation and brand collaboration."
+      },
+      "projectBased": {
+        "title": "Project-Based Collaboration",
+        "description": "One-time or limited-scope projects like ERP, IT, or AI deployments."
+      },
+      "globalNetwork": {
+        "title": "Global Network Integration",
+        "description": "Working with regional experts and cross-border enterprises."
+      }
+    },
+    "benefits": {
+      "title": "Why Partner with Admas",
+      "expertise": "Cutting-edge AI-driven transformation expertise",
+      "scalable": "Scalable architecture and automation frameworks",
+      "global": "Global operations across Germany, South Sudan, and Africa",
+      "teams": "Dedicated consulting, IT, and ERP development teams"
+    },
+    "finalCta": {
+      "title": "Let's create intelligent solutions together."
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Empowering Businesses Through",
+      "titleHighlight": "Intelligence, Innovation, and Training.",
+      "subtitle": "Admas delivers cutting-edge solutions in business consulting, AI-driven systems, and professional training. We bridge technology and strategy to help organizations operate smarter, faster, and more efficiently."
+    },
+    "team": {
+      "title": "Founding Team",
+      "subtitle": "Admas Training, Consulting & IT-Solutions (ATCIT)",
+      "coreExpertise": "Core Expertise:"
+    },
+    "cta": {
+      "title": "We're shaping intelligent systems for a smarter future.",
+      "button": "Explore Business Training"
     }
   },
   "training": {
-    "whyChoose": {
-      "title": "Why Choose Our Training",
+    "hero": {
+      "title": "Business Management Training",
+      "subtitle": "Develop high-impact managerial, financial, and leadership skills"
+    },
+    "benefits": {
       "expertDepartment": {
         "title": "Expert Training Department",
         "description": "Developed and delivered by a dedicated training department of academic professionals, industry experts, and senior consultants."
       },
-      "practicalApplication": {
+      "practical": {
         "title": "Practical, Real-World Application",
         "description": "Includes real case studies, hands-on exercises, and applied managerial techniques you can use immediately."
       },
       "certification": {
         "title": "Globally Recognized Certification",
-        "description": "Receive an official certificate from AdmasITS — ideal for professional portfolios and career growth."
+        "description": "Receive an official certificate from Admas — ideal for professional portfolios and career growth."
       },
-      "skillDevelopment": {
+      "career": {
         "title": "Career-Driven Skill Development",
         "description": "Gain high-impact managerial, financial, and leadership skills that support promotions and organizational success."
       }
-    },
-    "modules": {
-      "title": "Training Modules",
-      "subtitle": "Comprehensive curriculum covering {count} essential business management topics",
-      "viewDetails": "View Details",
-      "enrollNow": "Enroll Now"
-    },
-    "cta": {
-      "title": "Ready to Invest in Your Future?",
-      "subtitle": "Join hundreds of professionals who have transformed their careers through our training programs.",
-      "requestInfo": "Request Training Information",
-      "backToHome": "Back to Home"
-    },
-    "enrollment": {
-      "title": "Enrollment Form",
-      "subtitle": "Complete the form below to enroll in our Business Management Training Programs",
-      "startEnrollment": "Start Enrollment Process",
-      "collapseForm": "Collapse Form",
-      "personalInfo": "Personal Information",
-      "companyInfo": "Company / Organization",
-      "optional": "(Optional)",
-      "courseSelection": "Course Selection",
-      "enrollmentPreferences": "Enrollment Preferences",
-      "additionalNotes": "Additional Notes",
-      "consent": {
-        "accurate": "I confirm that the provided information is accurate.",
-        "contact": "I agree to be contacted by AdmasITS."
-      },
-      "requestEnrollment": "Request Enrollment",
-      "success": "Enrollment request submitted successfully."
-    },
-    "request": {
-      "title": "Request Training Information",
-      "subtitle": "Select your training modules and provide your contact information.",
-      "modules": "Training Modules",
-      "fullName": "Full Name",
-      "email": "Email Address",
-      "phone": "Phone Number",
-      "organization": "Organization / Company",
-      "jobTitle": "Job Title",
-      "country": "Country",
-      "message": "Message / Additional Details",
-      "submitRequest": "Submit Request",
-      "success": "Your training request has been received. We'll contact you shortly."
     }
+  },
+  "support": {
+    "hero": {
+      "title": "Support Center",
+      "subtitle": "Get help with onboarding, technical questions, integrations, and enterprise support. Our team is here to guide you."
+    },
+    "supportOptions": {
+      "title": "Choose Your Support Path",
+      "subtitle": "Multiple ways to get the help you need, when you need it"
+    },
+    "options": {
+      "documentation": {
+        "title": "Documentation Hub",
+        "description": "Learn, build, and troubleshoot with our step-by-step guides and best practices."
+      },
+      "community": {
+        "title": "Community & Collaboration",
+        "description": "Connect with other builders, share solutions, and join discussions."
+      },
+      "dedicated": {
+        "title": "Dedicated Support",
+        "description": "Get direct assistance for technical, billing, and enterprise issues."
+      }
+    },
+    "form": {
+      "title": "Submit a Support Request",
+      "subtitle": "Fill out the form below and our team will get back to you promptly",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Acme Corporation",
+      "requestType": "Request Type",
+      "priority": "Priority",
+      "message": "Message",
+      "messagePlaceholder": "Please provide details about your request...",
+      "file": "Attachment (optional)",
+      "submit": "Submit Request",
+      "submitting": "Submitting...",
+      "success": "Support request submitted successfully!",
+      "successMessage": "We'll get back to you as soon as possible."
+    },
+    "sla": {
+      "responseTimes": "Response Times",
+      "standard": "Standard",
+      "standardTime": "24–48 hours",
+      "priority": "Priority",
+      "priorityTime": "4–12 hours",
+      "enterprise": "Enterprise SLA",
+      "enterpriseTime": "Custom terms",
+      "systemStatus": "System Status",
+      "allSystemsOperational": "All systems operational",
+      "viewStatusPage": "View status page →"
+    },
+    "requestTypes": {
+      "technical": "Technical Issue",
+      "billing": "Billing / Invoice",
+      "account": "Account Access",
+      "integration": "Integration Support",
+      "feature": "Feature Request",
+      "partnership": "Partnership Inquiry",
+      "security": "Security / Compliance",
+      "other": "Other"
+    },
+    "priorities": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    }
+  },
+  "meta": {
+    "siteName": "Admas",
+    "description": "Admas delivers AI-driven systems and intelligent ideas for enterprises seeking intelligent automation and transformation.",
+    "titleTemplate": "%s | Admas"
+  },
+  "common": {
+    "required": "*",
+    "select": "Select",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "next": "Next",
+    "previous": "Previous",
+    "back": "Back",
+    "continue": "Continue",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "more": "More",
+    "less": "Less",
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contact": "Contact Us",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "location": "Location"
+  },
+  "legal": {
+    "placeholder": "we are waiting from Prof. Sebhatleab"
   }
 }
+

@@ -564,7 +564,7 @@ export default function EnrollmentForm({ shouldExpand = false, onExpanded }: Enr
                       )}
                     />
                     <Label htmlFor="consentContact" className="text-white cursor-pointer flex-1">
-                      I agree to be contacted by AdmasITS. <span className="text-red-400">*</span>
+                      I agree to be contacted by Admas. <span className="text-red-400">*</span>
                     </Label>
                   </div>
                   {errors.consentContact && (

@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
-import { useTranslations, useLocale } from "next-intl"
+import { useTranslations } from "next-intl"
 
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import DemoBookingModal from "./DemoBookingModal"
 
 const MotionButton = motion(Button)
@@ -17,22 +17,8 @@ const floatingNodes = [
   { size: "w-24 h-24", style: { bottom: "22%", right: "20%" } },
 ]
 
-const typingPhrases = {
-  en: [
-    "AI-Powered Business Solutions",
-    "Autonomous Intelligence for Teams",
-    "Adaptive Workflows at Scale",
-  ],
-  de: [
-    "KI-gestützte Geschäftslösungen",
-    "Autonome Intelligenz für Teams",
-    "Adaptive Workflows im großen Maßstab",
-  ],
-}
-
 export default function Hero() {
-  const t = useTranslations('hero')
-  const locale = useLocale() as 'en' | 'de'
+  const t = useTranslations("hero")
   const heroRef = useRef<HTMLDivElement | null>(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -41,13 +27,19 @@ export default function Hero() {
 
   const hueRotate = useTransform(scrollYProgress, [0, 1], ["0deg", "35deg"])
 
+  const typingPhrases = [
+    t("typingPhrases.0"),
+    t("typingPhrases.1"),
+    t("typingPhrases.2"),
+  ]
+
   const [phraseIndex, setPhraseIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const [displayText, setDisplayText] = useState("")
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false)
 
-  const currentPhrase = useMemo(() => typingPhrases[locale][phraseIndex], [phraseIndex, locale])
+  const currentPhrase = useMemo(() => typingPhrases[phraseIndex], [phraseIndex, typingPhrases])
 
   useEffect(() => {
     let timeout: NodeJS.Timeout
@@ -66,12 +58,12 @@ export default function Hero() {
       }, 55)
     } else if (isDeleting && charIndex < 0) {
       setIsDeleting(false)
-      setPhraseIndex((prev) => (prev + 1) % typingPhrases[locale].length)
+      setPhraseIndex((prev) => (prev + 1) % typingPhrases.length)
       setCharIndex(0)
     }
 
     return () => clearTimeout(timeout)
-  }, [charIndex, currentPhrase, isDeleting, locale])
+  }, [charIndex, currentPhrase, isDeleting])
 
   return (
     <section ref={heroRef} className="relative flex min-h-screen items-center justify-center overflow-hidden pt-14 sm:pt-16 md:pt-20">
@@ -137,10 +129,70 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
             className="mb-4 sm:mb-6 px-2 text-[clamp(2rem,8vw,4.5rem)] font-heading font-bold leading-[1.1] sm:leading-tight text-white whitespace-normal break-words"
           >
-            {t('titlePart1')} <span className="gradient-text">{t('titlePart2')}</span>
-            <br className="hidden sm:block" />
-            <span className="sm:hidden"> </span>
-            {t('titlePart3')} <span className="gradient-text">{t('titlePart4')}</span>
+            {(() => {
+              const heading = t("heading")
+              const highlight1 = t("headingHighlight1")
+              const highlight2 = t("headingHighlight2")
+              
+              // Debug logging for locale detection
+              console.log('[Hero] Heading text:', heading)
+              console.log('[Hero] Highlight1:', highlight1)
+              console.log('[Hero] Highlight2:', highlight2)
+              
+              // Simple and reliable approach: split by highlights and reconstruct
+              const parts: (string | { type: 'highlight'; value: string })[] = []
+              let remaining = heading
+              
+              // Find and replace highlight1 first (case-insensitive search)
+              const index1 = remaining.toLowerCase().indexOf(highlight1.toLowerCase())
+              if (index1 !== -1) {
+                // Add text before highlight1
+                if (index1 > 0) {
+                  parts.push(remaining.substring(0, index1))
+                }
+                // Add highlight1 (use original case from heading)
+                const actualHighlight1 = remaining.substring(index1, index1 + highlight1.length)
+                parts.push({ type: 'highlight', value: actualHighlight1 })
+                // Update remaining text
+                remaining = remaining.substring(index1 + highlight1.length)
+              }
+              
+              // Find and replace highlight2 in remaining text (case-insensitive search)
+              const index2 = remaining.toLowerCase().indexOf(highlight2.toLowerCase())
+              if (index2 !== -1) {
+                // Add text before highlight2
+                if (index2 > 0) {
+                  parts.push(remaining.substring(0, index2))
+                }
+                // Add highlight2 (use original case from heading)
+                const actualHighlight2 = remaining.substring(index2, index2 + highlight2.length)
+                parts.push({ type: 'highlight', value: actualHighlight2 })
+                // Add remaining text after highlight2
+                if (index2 + highlight2.length < remaining.length) {
+                  parts.push(remaining.substring(index2 + highlight2.length))
+                }
+              } else if (remaining) {
+                // No highlight2 found, add remaining text
+                parts.push(remaining)
+              }
+              
+              // If no highlights found, just return the heading
+              if (parts.length === 0) {
+                parts.push(heading)
+              }
+              
+              return parts.map((part, index) => {
+                if (typeof part === 'string') {
+                  return <span key={index}>{part}</span>
+                } else {
+                  return (
+                    <span key={index} className="gradient-text">
+                      {part.value}
+                    </span>
+                  )
+                }
+              })
+            })()}
           </motion.h1>
 
           <motion.p
@@ -149,7 +201,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
             className="mx-auto mb-8 sm:mb-10 max-w-3xl px-2 text-[clamp(1rem,2.5vw,1.35rem)] leading-relaxed text-gray-300 whitespace-normal break-words"
           >
-            {t('subtitle')}
+            {t("subheading")}
           </motion.p>
 
           <motion.div
@@ -166,7 +218,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  {t('exploreSolutions')}
+                  {t("cta1")}
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </span>
                 <motion.span
@@ -184,7 +236,7 @@ export default function Hero() {
               whileTap={{ scale: 0.98 }}
               onClick={() => setIsDemoModalOpen(true)}
             >
-              <span className="relative z-10">{t('bookDemo')}</span>
+              <span className="relative z-10">{t("cta2")}</span>
               <motion.span
                 className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                 initial={{ opacity: 0, x: "-120%" }}

@@ -68,7 +68,7 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-admas-dark via-admas-purple-dark to-admas-purple text-foreground font-sans antialiased;
+    @apply bg-gradient-to-br from-admas-dark via-admas-purple-dark to-admas-purple text-white font-sans antialiased;
     min-height: 100vh;
     overflow-x: hidden;
     width: 100%;
@@ -301,4 +301,20 @@
 
 *:focus-visible {
   @apply outline-none ring-2 ring-admas-purple-light ring-offset-2 ring-offset-admas-dark;
+}
+
+.animated-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(120,80,255,0.35), transparent),
+              radial-gradient(circle at 70% 60%, rgba(0,200,255,0.35), transparent);
+  filter: blur(90px);
+  animation: meshMove 22s ease-in-out infinite;
+  transform: translateZ(0);
+}
+
+@keyframes meshMove {
+  0% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(40px,-30px) scale(1.12); }
+  100% { transform: translate(0,0) scale(1); }
 }

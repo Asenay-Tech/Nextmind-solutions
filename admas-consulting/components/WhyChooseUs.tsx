@@ -5,38 +5,37 @@ import { Award, BarChart, Clock, Shield, Users, Zap } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 export default function WhyChooseUs() {
-  const t = useTranslations('whyChooseUs')
-  
+  const t = useTranslations("whyChooseUs")
   const benefits = [
     {
       icon: Shield,
-      title: t('enterpriseSecurity.title'),
-      description: t('enterpriseSecurity.description'),
+      title: t("benefits.security.title"),
+      description: t("benefits.security.description"),
     },
     {
       icon: Zap,
-      title: t('rapidImplementation.title'),
-      description: t('rapidImplementation.description'),
+      title: t("benefits.implementation.title"),
+      description: t("benefits.implementation.description"),
     },
     {
       icon: Users,
-      title: t('expertTeam.title'),
-      description: t('expertTeam.description'),
+      title: t("benefits.team.title"),
+      description: t("benefits.team.description"),
     },
     {
       icon: BarChart,
-      title: t('measurableROI.title'),
-      description: t('measurableROI.description'),
+      title: t("benefits.roi.title"),
+      description: t("benefits.roi.description"),
     },
     {
       icon: Clock,
-      title: t('support24x7.title'),
-      description: t('support24x7.description'),
+      title: t("benefits.support.title"),
+      description: t("benefits.support.description"),
     },
     {
       icon: Award,
-      title: t('industryExpertise.title'),
-      description: t('industryExpertise.description'),
+      title: t("benefits.expertise.title"),
+      description: t("benefits.expertise.description"),
     },
   ] as const
 
@@ -50,10 +49,10 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
           >
             <h2 className="text-[clamp(1.875rem,5vw,3rem)] font-heading font-bold text-white mb-3 sm:mb-4 px-2 whitespace-normal break-words">
-              {t('title')}
+              {t("title")}
             </h2>
             <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-gray-400 max-w-3xl mx-auto px-2 leading-relaxed whitespace-normal break-words">
-              {t('subtitle')}
+              {t("subtitle")}
             </p>
           </motion.div>
         </div>

@@ -1,18 +1,18 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { Link } from "@/i18n/navigation"
+import { Link } from "@/i18n/routing"
 import Image from "next/image"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import LanguageSwitcher from "./LanguageSwitcher"
 
 export default function Header() {
-  const t = useTranslations('nav')
+  const t = useTranslations("nav")
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -21,20 +21,20 @@ export default function Header() {
   const resourcesRef = useRef<HTMLDivElement>(null)
 
   const navLinks = [
-    { href: "/", label: t('home') },
-    { href: "/#services", label: t('solutions') },
-    { href: "/business-management", label: t('businessTraining') },
+    { href: "/", label: t("home") },
+    { href: "/#services", label: t("solutions") },
+    { href: "/business-management", label: t("businessTraining") },
   ]
 
   const companyLinks = [
-    { href: "/about", label: t('aboutUs') },
-    { href: "/careers", label: t('partners') },
+    { href: "/about", label: t("aboutUs") },
+    { href: "/partners", label: t("partners") },
   ]
 
   const resourcesLinks = [
-    { href: "/support", label: t('support') },
-    { href: "/#process", label: t('ourProcess') },
-    { href: "/blog", label: t('blogComingSoon') },
+    { href: "/support", label: t("support") },
+    { href: "/#process", label: t("ourProcess") },
+    { href: "/blog", label: t("blog") },
   ]
 
   useEffect(() => {
@@ -91,7 +91,7 @@ export default function Header() {
             <div className="relative h-8 sm:h-10 w-auto flex items-center flex-shrink-0">
               <Image
                 src="/assets/logo/logo.jpg"
-                alt="AdmasITS Logo"
+                alt="Admas Logo"
                 width={120}
                 height={40}
                 className="h-8 sm:h-10 w-auto object-contain"
@@ -102,10 +102,10 @@ export default function Header() {
             </div>
             <div className="hidden sm:block min-w-0">
               <div className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-admas-purple-light transition-colors truncate">
-                AdmasITS
+                Admas
               </div>
               <div className="text-[10px] sm:text-xs text-gray-400 hidden md:block">
-                AI-Driven Systems &amp; Intelligent Ideas
+                AI-Systems and Intelligent Management plc
               </div>
             </div>
           </Link>
@@ -128,7 +128,7 @@ export default function Header() {
                 onClick={() => handleDropdownClick("company")}
                 className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors font-medium whitespace-nowrap"
               >
-                <span>{t('company')}</span>
+                <span>{t("company")}</span>
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 transition-transform duration-200",
@@ -168,7 +168,7 @@ export default function Header() {
                 onClick={() => handleDropdownClick("resources")}
                 className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors font-medium whitespace-nowrap"
               >
-                <span>{t('resources')}</span>
+                <span>{t("resources")}</span>
                 <ChevronDown
                   className={cn(
                     "h-4 w-4 transition-transform duration-200",
@@ -210,11 +210,11 @@ export default function Header() {
                 variant="outline" 
                 className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30 transition-all text-sm px-3 xl:px-4 whitespace-nowrap"
               >
-                {t('login')}
+                {t("login")}
               </Button>
             </Link>
             <Link href="/contact">
-              <Button className="btn-gradient text-sm px-4 xl:px-6 whitespace-nowrap">{t('getStarted')}</Button>
+              <Button className="btn-gradient text-sm px-4 xl:px-6 whitespace-nowrap">{t("getStarted")}</Button>
             </Link>
           </div>
 
@@ -255,7 +255,7 @@ export default function Header() {
                   onClick={() => toggleMobileDropdown("company")}
                   className="w-full flex items-center justify-between text-gray-300 hover:text-white transition-colors font-medium px-4 py-2.5"
                 >
-                  <span>{t('company')}</span>
+                  <span>{t("company")}</span>
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 transition-transform duration-200",
@@ -285,7 +285,7 @@ export default function Header() {
                   onClick={() => toggleMobileDropdown("resources")}
                   className="w-full flex items-center justify-between text-gray-300 hover:text-white transition-colors font-medium px-4 py-2.5"
                 >
-                  <span>Resources</span>
+                  <span>{t("resources")}</span>
                   <ChevronDown
                     className={cn(
                       "h-4 w-4 transition-transform duration-200",
@@ -310,7 +310,7 @@ export default function Header() {
               </div>
 
               <div className="px-3 sm:px-4 pt-4 space-y-2 border-t border-white/10 mt-2">
-                <div className="flex justify-center mb-2">
+                <div className="flex justify-center">
                   <LanguageSwitcher />
                 </div>
                 <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
@@ -318,11 +318,11 @@ export default function Header() {
                     variant="outline" 
                     className="w-full border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30 transition-all text-sm sm:text-base"
                   >
-                    {t('login')}
+                    {t("login")}
                   </Button>
                 </Link>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button className="btn-gradient w-full text-sm sm:text-base">{t('getStarted')}</Button>
+                  <Button className="btn-gradient w-full text-sm sm:text-base">{t("getStarted")}</Button>
                 </Link>
               </div>
             </div>

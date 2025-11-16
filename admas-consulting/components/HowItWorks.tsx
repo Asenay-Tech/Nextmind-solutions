@@ -13,14 +13,13 @@ import { useEffect, useRef, useState } from "react"
 import { useTranslations } from "next-intl"
 
 export default function HowItWorks() {
-  const t = useTranslations('howItWorks')
-  
+  const t = useTranslations("howItWorks")
   const steps = [
     {
       number: "01",
       icon: Search,
-      title: t('discover.title'),
-      description: t('discover.description'),
+      title: t("steps.1.title"),
+      description: t("steps.1.description"),
       gradient: "from-admas-purple-light via-admas-blue to-admas-cyan",
       iconAnimation: {
         rotate: [0, 10, -10, 0],
@@ -30,8 +29,8 @@ export default function HowItWorks() {
     {
       number: "02",
       icon: BarChart3,
-      title: t('analyze.title'),
-      description: t('analyze.description'),
+      title: t("steps.2.title"),
+      description: t("steps.2.description"),
       gradient: "from-admas-blue via-admas-cyan to-admas-purple-light",
       iconAnimation: {
         y: [0, -8, 0],
@@ -41,8 +40,8 @@ export default function HowItWorks() {
     {
       number: "03",
       icon: Lightbulb,
-      title: t('design.title'),
-      description: t('design.description'),
+      title: t("steps.3.title"),
+      description: t("steps.3.description"),
       gradient: "from-admas-cyan via-admas-purple-light to-admas-blue",
       iconAnimation: {
         scale: [1, 1.15, 1],
@@ -52,8 +51,8 @@ export default function HowItWorks() {
     {
       number: "04",
       icon: Code,
-      title: t('develop.title'),
-      description: t('develop.description'),
+      title: t("steps.4.title"),
+      description: t("steps.4.description"),
       gradient: "from-admas-purple-light via-admas-blue to-admas-cyan",
       iconAnimation: {
         y: [0, -4, 0],
@@ -63,8 +62,8 @@ export default function HowItWorks() {
     {
       number: "05",
       icon: Rocket,
-      title: t('deploy.title'),
-      description: t('deploy.description'),
+      title: t("steps.5.title"),
+      description: t("steps.5.description"),
       gradient: "from-admas-blue via-admas-cyan to-admas-purple-light",
       iconAnimation: {
         y: [0, -12, 0],
@@ -74,8 +73,8 @@ export default function HowItWorks() {
     {
       number: "06",
       icon: Infinity,
-      title: t('optimize.title'),
-      description: t('optimize.description'),
+      title: t("steps.6.title"),
+      description: t("steps.6.description"),
       gradient: "from-admas-cyan via-admas-purple-light to-admas-blue",
       iconAnimation: {
         rotate: [0, 180, 360],
@@ -148,7 +147,7 @@ export default function HowItWorks() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-3 sm:mb-4 px-2 text-[clamp(1.875rem,6vw,3.75rem)] font-heading font-bold text-white whitespace-normal break-words"
           >
-            {t('title')}
+            {t("title")}
           </motion.h2>
           {/* Glowing Gradient Underline */}
           <motion.div
@@ -165,7 +164,7 @@ export default function HowItWorks() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto max-w-3xl px-2 text-[clamp(1rem,2.5vw,1.25rem)] text-gray-300 leading-relaxed whitespace-normal break-words"
           >
-            {t('subtitle')}
+            {t("subtitle")}
           </motion.p>
         </motion.div>
 
@@ -288,8 +287,8 @@ export default function HowItWorks() {
         >
           <div className="mx-auto max-w-4xl">
             <div className="mb-4 flex items-center justify-between text-sm text-gray-400">
-              <span>Discovery</span>
-              <span>Optimization</span>
+              <span>{t("progress.start")}</span>
+              <span>{t("progress.end")}</span>
             </div>
             <div className="relative h-2 overflow-hidden rounded-full bg-white/5">
               <motion.div
@@ -304,12 +303,12 @@ export default function HowItWorks() {
               />
             </div>
             <div className="mt-2 flex justify-between text-xs text-gray-500">
-              <span>Step 1</span>
-              <span>Step 2</span>
-              <span>Step 3</span>
-              <span>Step 4</span>
-              <span>Step 5</span>
-              <span>Step 6</span>
+              <span>{t("progress.step1")}</span>
+              <span>{t("progress.step2")}</span>
+              <span>{t("progress.step3")}</span>
+              <span>{t("progress.step4")}</span>
+              <span>{t("progress.step5")}</span>
+              <span>{t("progress.step6")}</span>
             </div>
           </div>
         </motion.div>

@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic"
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
-import { locales, type Locale } from '@/i18n'
 
 // Dynamically import below-the-fold components for better initial load
 const ServiceGrid = dynamic(() => import("@/components/ServiceGrid"), {
@@ -20,11 +19,16 @@ const Footer = dynamic(() => import("@/components/Footer"), {
   loading: () => <div className="min-h-[200px]" />,
 })
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+type Props = {
+  params: Promise<{ locale: string }>
 }
 
-export default function HomePage() {
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'de' }]
+}
+
+export default function HomePage({ params }: Props) {
+  // Force rebuild - cache buster
   return (
     <main className="min-h-screen">
       <Header />
@@ -32,7 +36,6 @@ export default function HomePage() {
       <ServiceGrid />
       <HowItWorks />
       <WhyChooseUs />
-      {/* TODO: Replace this area with 'Super Powerful Animation' section later */}
       <Footer />
     </main>
   )

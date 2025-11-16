@@ -1,15 +1,17 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
-import WaitingMessage from "@/components/WaitingMessage"
 
 export default function CookiesPage() {
   return (
     <main className="flex min-h-screen flex-col">
       <Header />
-      <WaitingMessage />
+      <section className="flex flex-1 items-center justify-center px-4">
+        <div className="legal-page text-center text-lg text-gray-300 md:text-2xl">
+          we are waiting from Prof. Sebhatleab
+        </div>
+      </section>
       <Footer />
     </main>
   )
 }
-
 

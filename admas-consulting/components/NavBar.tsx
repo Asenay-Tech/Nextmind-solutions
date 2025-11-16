@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Menu, X, ChevronDown, ArrowRight, Bot, Package, Building2, DollarSign } from "lucide-react"
 import { usePathname } from "next/navigation"
 
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 // Navigation structure
@@ -165,10 +165,10 @@ export default function NavBar() {
             </div>
             <div className="hidden md:block">
               <div className="font-heading font-bold text-lg text-white group-hover:text-admas-purple-light transition-colors">
-                AdmasITS
+                Admas
               </div>
               <div className="text-xs text-gray-400">
-                AI-Driven Systems &amp; Intelligent Ideas
+                AI-Systems and Intelligent Management plc
               </div>
             </div>
           </Link>

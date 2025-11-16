@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Link, usePathname } from "@/i18n/navigation"
+import { Link } from "@/i18n/routing"
+import { usePathname } from "@/i18n/routing"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTranslations } from "next-intl"
@@ -16,33 +17,33 @@ import {
 } from "lucide-react"
 
 export default function Footer() {
-  const t = useTranslations('footer')
+  const t = useTranslations("footer")
   const currentYear = new Date().getFullYear()
   const pathname = usePathname()
   const [showToast, setShowToast] = useState(false)
 
   const footerLinks = {
     solutions: [
-      { label: t('solutions.aiAgents'), href: "/#services", anchor: "service-ai-agents" },
-      { label: t('solutions.inventory'), href: "/#services", anchor: "service-inventory-logistics" },
-      { label: t('solutions.finance'), href: "/#services", anchor: "service-automated-billing-payroll" },
-      { label: t('solutions.itInfrastructure'), href: "/#services", anchor: "service-it-infrastructure" },
+      { label: t("solutions.aiAgents"), href: "/#services", anchor: "service-ai-agents" },
+      { label: t("solutions.inventory"), href: "/#services", anchor: "service-inventory-logistics" },
+      { label: t("solutions.finance"), href: "/#services", anchor: "service-automated-billing-payroll" },
+      { label: t("solutions.infrastructure"), href: "/#services", anchor: "service-it-infrastructure" },
     ],
     company: [
-      { label: t('company.aboutUs'), href: "/about", anchor: undefined },
-      { label: t('company.businessTraining'), href: "/business-management", anchor: undefined },
-      { label: t('company.partners'), href: "/careers", anchor: undefined },
+      { label: t("company.about"), href: "/about", anchor: undefined },
+      { label: t("company.training"), href: "/business-management", anchor: undefined },
+      { label: t("company.partners"), href: "/partners", anchor: undefined },
     ],
     resources: [
-      { label: t('resources.blog'), href: "/blog", anchor: undefined },
-      { label: t('resources.ourProcess'), href: "/#process", anchor: undefined },
-      { label: t('resources.support'), href: "/support", anchor: undefined },
+      { label: t("resources.blog"), href: "/blog", anchor: undefined },
+      { label: t("resources.process"), href: "/#process", anchor: undefined },
+      { label: t("resources.support"), href: "/support", anchor: undefined },
     ],
     legal: [
-      { label: t('legal.privacy'), href: "/privacy", anchor: undefined },
-      { label: t('legal.terms'), href: "/terms", anchor: undefined },
-      { label: t('legal.cookies'), href: "/cookies", anchor: undefined },
-      { label: t('legal.gdpr'), href: "/gdpr", anchor: undefined },
+      { label: t("legal.privacy"), href: "/privacy", anchor: undefined },
+      { label: t("legal.terms"), href: "/terms", anchor: undefined },
+      { label: t("legal.cookies"), href: "/cookies", anchor: undefined },
+      { label: t("legal.gdpr"), href: "/gdpr", anchor: undefined },
     ],
   }
 
@@ -77,7 +78,7 @@ export default function Footer() {
     if (anchor) {
       e.preventDefault()
       // If we're not on the home page, navigate first
-      const currentPath = pathname.replace(/^\/[a-z]{2}/, '') || '/'
+      const currentPath = pathname || '/'
       if (currentPath !== "/") {
         window.location.href = `${href}#${anchor}`
         // Wait for navigation, then scroll
@@ -132,19 +133,19 @@ export default function Footer() {
               <div className="relative h-8 sm:h-10 w-auto flex items-center flex-shrink-0">
                 <Image
                   src="/assets/logo/logo.jpg"
-                  alt="AdmasITS Logo"
+                  alt="Admas Logo"
                   width={120}
                   height={40}
                   className="h-8 sm:h-10 w-auto object-contain"
                 />
               </div>
               <div className="min-w-0">
-                <div className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-admas-purple-light transition-colors">AdmasITS</div>
-                <div className="text-[10px] sm:text-xs text-gray-400">{t('tagline')}</div>
+                <div className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-admas-purple-light transition-colors">Admas</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">AI-Systems and Intelligent Management plc</div>
               </div>
             </Link>
             <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed whitespace-normal break-words">
-              {t('description')}
+              {t("description")}
             </p>
 
             <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-400">
@@ -154,24 +155,24 @@ export default function Footer() {
                   href="mailto:contact@admasits.com"
                   className="hover:text-white transition-colors break-all"
                 >
-                  {t('email')}
+                  contact@admasits.com
                 </a>
               </div>
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-admas-purple-light flex-shrink-0" />
                 <a href="tel:+4917657725997" className="hover:text-white transition-colors">
-                  {t('phone')}
+                  +49 176 57725997
                 </a>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-1 text-admas-purple-light flex-shrink-0" />
-                <span className="break-words">{t('location')}</span>
+                <span className="break-words">Frankfurt, Germany.</span>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t('solutions.title')}</h3>
+            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t("solutions.title")}</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.solutions.map((link) => (
                 <li key={link.label}>
@@ -188,7 +189,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t('company.title')}</h3>
+            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t("company.title")}</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
@@ -204,7 +205,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t('resources.title')}</h3>
+            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t("resources.title")}</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.href}>
@@ -220,7 +221,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t('legal.title')}</h3>
+            <h3 className="font-heading font-bold text-white mb-3 sm:mb-4 text-sm sm:text-base whitespace-nowrap">{t("legal.title")}</h3>
             <ul className="space-y-1.5 sm:space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.href}>
@@ -239,7 +240,7 @@ export default function Footer() {
         <div className="py-4 sm:py-6 border-t border-white/10">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
             <div className="text-gray-400 text-xs sm:text-sm text-center sm:text-left whitespace-normal break-words">
-              © {currentYear} AdmasITS. {t('copyright')}
+              {t("copyright", { year: currentYear })}
             </div>
 
             <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
@@ -272,7 +273,7 @@ export default function Footer() {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg bg-admas-dark/95 backdrop-blur-2xl border border-white/10 shadow-2xl"
           >
-            <p className="text-white text-sm font-medium">Coming soon</p>
+            <p className="text-white text-sm font-medium">{t("social.comingSoon")}</p>
           </motion.div>
         )}
       </AnimatePresence>
