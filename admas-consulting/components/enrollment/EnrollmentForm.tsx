@@ -277,7 +277,7 @@ export default function EnrollmentForm({ shouldExpand = false, onExpanded }: Enr
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  transition={{ duration: 0.3, ease: [0.42, 0, 0.58, 1] }}
                   className="overflow-hidden"
                 >
                   <form onSubmit={handleSubmit} className="space-y-8">
@@ -606,7 +606,7 @@ export default function EnrollmentForm({ shouldExpand = false, onExpanded }: Enr
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 rounded-lg bg-admas-dark/95 backdrop-blur-2xl border border-white/10 shadow-2xl"
           >
             <p className="text-white text-sm font-medium">

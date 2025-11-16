@@ -136,7 +136,7 @@ export default function TrainingOverlay({ open, module, onClose }: TrainingOverl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
+            transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
             onClick={onClose}
             aria-hidden="true"
           />
@@ -150,7 +150,7 @@ export default function TrainingOverlay({ open, module, onClose }: TrainingOverl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             onClick={onClose}
           >
             <motion.div
@@ -160,7 +160,7 @@ export default function TrainingOverlay({ open, module, onClose }: TrainingOverl
               initial={{ opacity: 0, y: 50, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 50, scale: 0.97 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <figure className="relative aspect-[16/9] w-full shrink-0 overflow-hidden">
                 <Image

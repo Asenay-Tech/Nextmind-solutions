@@ -15,7 +15,7 @@ export default function BusinessAccordion() {
       {businessModules.map((module) => (
         <AccordionItem
           key={module.id}
-          value={module.id}
+          value={String(module.id)}
           className="glass-card border-none"
         >
           <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-white/5 rounded-t-2xl transition-colors">

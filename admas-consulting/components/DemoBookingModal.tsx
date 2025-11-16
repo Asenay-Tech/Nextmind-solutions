@@ -369,7 +369,7 @@ export default function DemoBookingModal({ isOpen, onClose }: DemoBookingModalPr
                 y: position.y
               }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: isDragging ? 0 : 0.3, ease: "easeOut" }}
+              transition={{ duration: isDragging ? 0 : 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="relative w-full h-full sm:h-auto sm:max-w-3xl sm:max-h-[calc(100vh-2rem)] md:max-h-[calc(100vh-3rem)] sm:my-auto flex flex-col overflow-hidden sm:rounded-2xl bg-admas-dark/95 backdrop-blur-2xl border-0 sm:border border-white/10 shadow-2xl pointer-events-auto"
             >
               {/* Header - Draggable Area */}

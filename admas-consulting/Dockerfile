@@ -8,7 +8,8 @@ WORKDIR /app
 
 # Copy package files
 COPY package.json package-lock.json* ./
-RUN npm ci --production=false
+# Use npm install to avoid lockfile strictness in ci during containerized builds
+RUN npm install --no-audit --no-fund
 
 # Rebuild the source code only when needed
 FROM base AS builder

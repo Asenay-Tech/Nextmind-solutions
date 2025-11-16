@@ -22,11 +22,11 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       initial={{ opacity: 0, y: 32, filter: "blur(12px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.55, delay: index * 0.08, ease: "easeOut" }}
+      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <motion.article
         whileHover={{ y: -6, scale: 1.01 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
         className="group glass-card relative h-full p-4 sm:p-5 md:p-6"
       >
         <div className="mb-3 sm:mb-4">

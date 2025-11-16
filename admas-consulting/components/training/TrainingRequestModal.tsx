@@ -205,9 +205,9 @@ export default function TrainingRequestModal({
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                 className="relative w-full h-full sm:h-auto sm:max-h-[calc(100vh-2rem)] md:max-h-[90vh] sm:max-w-3xl overflow-hidden sm:rounded-2xl bg-gradient-to-br from-[#0b1020] to-[#1a1f3c] border-0 sm:border border-white/10 shadow-2xl pointer-events-auto flex flex-col"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
               >
                 {/* Header */}
                 <div className="sticky top-0 z-10 border-b border-white/10 bg-gradient-to-r from-admas-purple-dark/30 to-admas-dark/30 backdrop-blur-xl p-4 sm:p-5 md:p-6 flex-shrink-0">
@@ -400,7 +400,7 @@ export default function TrainingRequestModal({
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[300] px-6 py-4 rounded-lg bg-admas-dark/95 backdrop-blur-2xl border border-white/10 shadow-2xl"
           >
             <p className="text-white text-sm font-medium">

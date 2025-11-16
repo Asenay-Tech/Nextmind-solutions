@@ -83,7 +83,7 @@ export default function Hero() {
         animate={{
           backgroundPosition: ["0% 0%", "22% 8%", "0% 0%"],
         }}
-        transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 16, repeat: Infinity, ease: [0, 0, 1, 1] }}
         style={{
           backgroundImage:
             "linear-gradient(115deg, rgba(96,165,250,0.08) 0%, rgba(138,99,241,0.18) 35%, transparent 70%), linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(96,165,250,0.06) 1px, transparent 1px)",
@@ -103,7 +103,7 @@ export default function Hero() {
           transition={{
             duration: 10 + index * 1.8,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.42, 0, 0.58, 1],
           }}
         />
       ))}
@@ -113,7 +113,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="group mb-4 sm:mb-6 inline-flex items-center space-x-2 rounded-full border border-white/15 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 backdrop-blur-xl"
           >
             <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-admas-cyan transition-transform duration-500 group-hover:rotate-12 flex-shrink-0" />
@@ -126,7 +126,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
             className="mb-4 sm:mb-6 px-2 text-[clamp(2rem,8vw,4.5rem)] font-heading font-bold leading-[1.1] sm:leading-tight text-white whitespace-normal break-words"
           >
             {(() => {
@@ -198,7 +198,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 24, filter: "blur(12px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: 0.25 }}
             className="mx-auto mb-8 sm:mb-10 max-w-3xl px-2 text-[clamp(1rem,2.5vw,1.35rem)] leading-relaxed text-gray-300 whitespace-normal break-words"
           >
             {t("subheading")}
@@ -207,7 +207,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: "easeOut", delay: 0.35 }}
+            transition={{ duration: 0.65, ease: [0.25, 0.1, 0.25, 1], delay: 0.35 }}
             className="mb-12 sm:mb-16 flex flex-col items-center justify-center gap-3 sm:gap-4 px-2 sm:flex-row"
           >
             <a href="#services" className="w-full sm:w-auto">
@@ -224,7 +224,7 @@ export default function Hero() {
                 <motion.span
                   className="absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.15),_transparent_60%)] opacity-0"
                   animate={{ opacity: [0, 0.5, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: [0.42, 0, 0.58, 1] }}
                 />
               </MotionButton>
             </a>
@@ -241,7 +241,7 @@ export default function Hero() {
                 className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                 initial={{ opacity: 0, x: "-120%" }}
                 whileHover={{ opacity: 1, x: "120%" }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                transition={{ duration: 0.8, ease: [0.42, 0, 0.58, 1] }}
               />
             </MotionButton>
           </motion.div>

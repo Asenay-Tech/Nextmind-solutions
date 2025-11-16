@@ -19,7 +19,7 @@ export default function ScrollIndicator() {
       <motion.div
         className="mt-3 h-2 w-2 rounded-full bg-white/40 shadow-[0_0_10px_rgba(138,99,241,0.4)]"
         animate={{ opacity: [0.35, 1, 0.35] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: [0.42, 0, 0.58, 1] }}
       />
     </div>
   )

@@ -10,6 +10,9 @@ import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import { Button } from "@/components/ui/button"
 
+// Prevent static export errors by rendering dynamically
+export const dynamic = "force-dynamic"
+
 type Props = {
   params: Promise<{ locale: string }>
 }
