@@ -41,6 +41,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 USER nextjs
 
+WORKDIR /app/admas-consulting
+
 EXPOSE 3000
 
 ENV PORT=3000
