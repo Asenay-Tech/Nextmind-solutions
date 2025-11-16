@@ -1,180 +1,347 @@
-# ✅ Hostinger Deployment Checklist
+# 🚀 VPS Deployment Checklist - Admas Consulting
 
-Use this checklist to ensure a smooth deployment process.
+## Pre-Deployment Verification
 
-## 📋 Pre-Deployment
+- [ ] VPS is Ubuntu 24.04 (or compatible)
+- [ ] Domain `admasits.com` has A record pointing to VPS IP
+- [ ] SSH access to VPS is configured
+- [ ] Root or sudo access available
+- [ ] Ports 22 (SSH), 80 (HTTP), 443 (HTTPS) are open
 
-- [ ] **Backup existing site** (if any files exist in public_html)
-- [ ] **Test build locally** (`npm run build`)
-- [ ] **Verify build output** (check `out/` folder exists)
-- [ ] **Review deployment guide** (`DEPLOYMENT_GUIDE.md`)
+## Deployment Steps
 
-## 🔧 Configuration
+### 1. Initial Setup
 
-- [ ] **Update next.config.ts** for static export
-  - [ ] Add `output: 'export'`
-  - [ ] Set `images: { unoptimized: true }`
-- [ ] **Build production bundle**
+- [ ] SSH into VPS
   ```bash
-  npm run build
+  ssh root@your-vps-ip
+  # or
+  ssh your-user@your-vps-ip
   ```
-- [ ] **Verify build success** (no errors in terminal)
-- [ ] **Check out/ folder** contains:
-  - [ ] `en/` folder with `index.html`
-  - [ ] `de/` folder with `index.html`
-  - [ ] `_next/` folder with static assets
-  - [ ] `assets/` folder (if exists)
 
-## 📤 Upload Files
+### 2. Run Deployment Script
 
-- [ ] **Access Hostinger File Manager**
-  - [ ] Log in to hpanel.hostinger.com
-  - [ ] Navigate to Files → File Manager
-- [ ] **Navigate to public_html**
-  - [ ] Open `public_html` folder
-  - [ ] Clear existing files (if needed, after backup)
-- [ ] **Upload build files**
-  - [ ] Upload ALL contents of `out/` folder
-  - [ ] Ensure `_next/` folder uploaded completely
-  - [ ] Verify file structure matches expected layout
-- [ ] **Upload .htaccess**
-  - [ ] Copy `.htaccess` file to `public_html/`
-  - [ ] Verify file permissions (644)
+- [ ] Download deployment script to VPS
+  ```bash
+  wget https://raw.githubusercontent.com/Asenay-Tech/Nextmind-solutions/fix/build-and-docker-clean/admas-consulting/deploy.sh
+  # Or upload via SCP from local machine
+  ```
 
-## 🌐 Domain Configuration
+- [ ] Make script executable
+  ```bash
+  chmod +x deploy.sh
+  ```
 
-- [ ] **Verify DNS settings**
-  - [ ] Nameservers point to Hostinger
-  - [ ] A record configured correctly
-  - [ ] CNAME for www (optional)
-- [ ] **Check domain pointing**
-  - [ ] Domain points to hosting account
-  - [ ] Document root set to `public_html`
-- [ ] **Test domain**
-  - [ ] Visit `http://admasits.com` (should redirect to `/en`)
-  - [ ] Check both `/en` and `/de` routes work
+- [ ] Run deployment script
+  ```bash
+  sudo ./deploy.sh
+  ```
 
-## 🔐 SSL Setup
+### 3. Manual Steps (if automated script fails)
 
-- [ ] **Install SSL certificate**
-  - [ ] Go to Security → SSL in Hostinger panel
-  - [ ] Click "Install SSL" for admasits.com
-  - [ ] Wait 5-15 minutes for activation
-- [ ] **Enable HTTPS redirect**
-  - [ ] Uncomment HTTPS redirect lines in `.htaccess`
-  - [ ] Test `http://` redirects to `https://`
-- [ ] **Verify SSL**
-  - [ ] Check padlock icon in browser
-  - [ ] Test SSL Labs: https://www.ssllabs.com/ssltest/
-  - [ ] No mixed content warnings
+- [ ] Update system
+  ```bash
+  sudo apt update && sudo apt upgrade -y
+  ```
 
-## 🧪 Testing
+- [ ] Install Docker
+  ```bash
+  curl -fsSL https://get.docker.com -o get-docker.sh
+  sudo sh get-docker.sh
+  sudo usermod -aG docker $USER
+  newgrp docker
+  ```
 
-### Basic Functionality
-- [ ] **Homepage loads**
-  - [ ] `https://admasits.com` works
-  - [ ] Redirects to `/en` correctly
-- [ ] **Language switching**
-  - [ ] Language switcher works
-  - [ ] `/en` and `/de` routes accessible
-  - [ ] Content changes between languages
-- [ ] **Navigation**
-  - [ ] All menu links work
-  - [ ] Footer links work
-  - [ ] Internal navigation functions
+- [ ] Install Docker Compose
+  ```bash
+  sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+  ```
 
-### Visual Checks
-- [ ] **Images display**
-  - [ ] Logo loads correctly
-  - [ ] All images render properly
-  - [ ] No broken image icons
-- [ ] **Styling**
-  - [ ] CSS loads correctly
-  - [ ] Fonts display properly
-  - [ ] Layout looks correct
-- [ ] **Responsive design**
-  - [ ] Mobile view works
-  - [ ] Tablet view works
-  - [ ] Desktop view works
+- [ ] Install Nginx
+  ```bash
+  sudo apt install -y nginx
+  sudo systemctl enable nginx
+  sudo systemctl start nginx
+  ```
 
-### Performance
-- [ ] **Lighthouse audit**
-  - [ ] Performance score: 90+
-  - [ ] Accessibility score: 90+
-  - [ ] Best Practices score: 90+
-  - [ ] SEO score: 90+
-- [ ] **Core Web Vitals**
-  - [ ] LCP < 2.5s
-  - [ ] FID < 100ms
-  - [ ] CLS < 0.1
-- [ ] **Page speed**
-  - [ ] GTmetrix test passed
-  - [ ] Page loads in < 3 seconds
-  - [ ] No major performance issues
+- [ ] Install Certbot
+  ```bash
+  sudo apt install -y certbot python3-certbot-nginx
+  ```
 
-### Browser Compatibility
-- [ ] **Chrome** - Works correctly
-- [ ] **Firefox** - Works correctly
-- [ ] **Safari** - Works correctly
-- [ ] **Edge** - Works correctly
-- [ ] **Mobile browsers** - Works correctly
+- [ ] Configure Firewall
+  ```bash
+  sudo ufw allow 22/tcp
+  sudo ufw allow 80/tcp
+  sudo ufw allow 443/tcp
+  sudo ufw enable
+  ```
 
-## 🔍 Debugging
+- [ ] Clone Repository
+  ```bash
+  sudo mkdir -p /var/www/admasits
+  cd /var/www/admasits
+  sudo git clone https://github.com/Asenay-Tech/Nextmind-solutions.git .
+  cd admas-consulting
+  sudo git checkout fix/build-and-docker-clean
+  ```
 
-### Common Issues
-- [ ] **404 errors**
-  - [ ] Check `.htaccess` file exists
-  - [ ] Verify mod_rewrite enabled
-  - [ ] Check file paths are correct
-- [ ] **Images not loading**
-  - [ ] Verify `_next/static/` folder uploaded
-  - [ ] Check image paths in code
-  - [ ] Verify file permissions
-- [ ] **Language routing issues**
-  - [ ] Check `.htaccess` routing rules
-  - [ ] Verify both `/en` and `/de` folders exist
-  - [ ] Test middleware configuration
-- [ ] **SSL issues**
-  - [ ] Wait 15-30 minutes after installation
-  - [ ] Clear browser cache
-  - [ ] Check SSL status in Hostinger panel
+- [ ] Configure Nginx
+  ```bash
+  sudo cp nginx-production.conf /etc/nginx/sites-available/admasits.com
+  sudo ln -s /etc/nginx/sites-available/admasits.com /etc/nginx/sites-enabled/
+  sudo rm -f /etc/nginx/sites-enabled/default
+  sudo nginx -t
+  sudo systemctl reload nginx
+  ```
 
-## 📊 Post-Deployment
+- [ ] Build and Start Docker
+  ```bash
+  cd /var/www/admasits/admas-consulting
+  sudo mkdir -p logs
+  sudo docker-compose build --no-cache
+  sudo docker-compose up -d
+  ```
 
-- [ ] **Monitor site**
-  - [ ] Check error logs (if available)
-  - [ ] Monitor performance
-  - [ ] Check analytics (if set up)
-- [ ] **Documentation**
-  - [ ] Note any custom configurations
-  - [ ] Document deployment process
-  - [ ] Save deployment notes
+- [ ] Obtain SSL Certificate
+  ```bash
+  sudo certbot --nginx -d admasits.com -d www.admasits.com
+  ```
 
-## 🚀 Future Deployments
+- [ ] Set Up Systemd Service
+  ```bash
+  sudo cp systemd-service.service /etc/systemd/system/admas-site.service
+  sudo systemctl daemon-reload
+  sudo systemctl enable admas-site.service
+  sudo systemctl start admas-site.service
+  ```
 
-- [ ] **Set up deployment workflow**
-  - [ ] Create deployment script (optional)
-  - [ ] Document update process
-  - [ ] Set up auto-deploy (if using GitHub Actions)
+## Post-Deployment Verification
+
+### 4. Verify Deployment
+
+- [ ] Check Docker container status
+  ```bash
+  cd /var/www/admasits/admas-consulting
+  docker-compose ps
+  ```
+  Expected: Container should show "Up" and "healthy"
+
+- [ ] Check container logs
+  ```bash
+  docker-compose logs -f
+  ```
+  Expected: Should show "Ready on http://0.0.0.0:3000"
+
+- [ ] Test HTTP endpoint
+  ```bash
+  curl http://localhost:3000/en
+  ```
+  Expected: Should return HTML (200 OK)
+
+- [ ] Test HTTP via domain
+  ```bash
+  curl http://admasits.com/en
+  ```
+  Expected: Should return HTML (200 OK or 301 redirect to HTTPS)
+
+- [ ] Test HTTPS via domain
+  ```bash
+  curl https://admasits.com/en
+  ```
+  Expected: Should return HTML (200 OK)
+
+- [ ] Test all routes
+  ```bash
+  curl https://admasits.com/en
+  curl https://admasits.com/de
+  curl https://admasits.com/en/about
+  curl https://admasits.com/en/partners
+  curl https://admasits.com/en/contact
+  ```
+  Expected: All should return HTML (200 OK)
+
+- [ ] Verify SSL certificate
+  ```bash
+  sudo certbot certificates
+  ```
+  Expected: Certificate should be listed and valid
+
+- [ ] Check Nginx status
+  ```bash
+  sudo systemctl status nginx
+  ```
+  Expected: Should be "active (running)"
+
+- [ ] Check Docker service status
+  ```bash
+  sudo systemctl status admas-site
+  ```
+  Expected: Should be "active (exited)" or "active (running)"
+
+- [ ] Verify systemd auto-start
+  ```bash
+  sudo systemctl is-enabled admas-site
+  ```
+  Expected: Should return "enabled"
+
+### 5. Browser Testing
+
+- [ ] Open `https://admasits.com` in browser
+- [ ] Verify homepage loads correctly
+- [ ] Test language switcher (EN ↔ DE)
+- [ ] Test navigation links
+- [ ] Verify HTTPS lock icon in browser
+- [ ] Test www subdomain: `https://www.admasits.com`
+
+### 6. Performance Checks
+
+- [ ] Test page load speed
+- [ ] Verify static assets are cached (check Network tab)
+- [ ] Verify Gzip compression is working
+- [ ] Test mobile responsiveness
+
+## Troubleshooting
+
+### Container Not Starting
+
+```bash
+cd /var/www/admasits/admas-consulting
+docker-compose logs -f
+docker-compose ps
+docker-compose down
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+### Nginx Not Proxying
+
+```bash
+sudo nginx -t
+sudo systemctl restart nginx
+sudo tail -f /var/log/nginx/error.log
+```
+
+### SSL Certificate Issues
+
+```bash
+sudo certbot certificates
+sudo certbot renew --dry-run
+sudo certbot --nginx -d admasits.com -d www.admasits.com --force-renewal
+```
+
+### Firewall Issues
+
+```bash
+sudo ufw status
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+```
+
+## Useful Commands
+
+```bash
+# View application logs
+cd /var/www/admasits/admas-consulting
+docker-compose logs -f
+
+# Restart application
+sudo systemctl restart admas-site
+
+# Rebuild application
+cd /var/www/admasits/admas-consulting
+docker-compose build --no-cache
+docker-compose up -d
+
+# Update code from Git
+cd /var/www/admasits/admas-consulting
+git pull origin fix/build-and-docker-clean
+docker-compose build --no-cache
+docker-compose up -d
+
+# Check container health
+docker-compose ps
+docker-compose exec admas-site node -e "require('http').get('http://localhost:3000/en', (r) => console.log(r.statusCode))"
+
+# View Nginx logs
+sudo tail -f /var/log/nginx/access.log
+sudo tail -f /var/log/nginx/error.log
+
+# Restart Nginx
+sudo systemctl restart nginx
+
+# Check service status
+sudo systemctl status admas-site
+sudo systemctl status nginx
+sudo systemctl status docker
+```
+
+## Security Checklist
+
+- [ ] Firewall is enabled (UFW)
+- [ ] Only ports 22, 80, 443 are open
+- [ ] SSL certificate is valid and auto-renewing
+- [ ] Docker containers run as non-root user
+- [ ] Nginx security headers are configured
+- [ ] Regular security updates enabled
+- [ ] SSH key authentication (disable password auth recommended)
+
+## Maintenance
+
+### Update Application
+
+```bash
+cd /var/www/admasits/admas-consulting
+git pull origin fix/build-and-docker-clean
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+### Backup Database (if applicable)
+
+```bash
+# Add backup commands here if database is added later
+```
+
+### Monitor Logs
+
+```bash
+# Application logs
+docker-compose logs -f
+
+# Nginx logs
+sudo tail -f /var/log/nginx/access.log
+sudo tail -f /var/log/nginx/error.log
+
+# System logs
+sudo journalctl -u admas-site -f
+```
+
+## Success Criteria
+
+✅ All routes accessible via HTTPS  
+✅ Language switcher works (EN/DE)  
+✅ Static assets load correctly  
+✅ SSL certificate valid and auto-renewing  
+✅ Docker containers healthy  
+✅ Nginx proxying correctly  
+✅ Systemd service auto-starts on reboot  
+✅ No console errors in browser  
+✅ Page load time < 3 seconds  
+
+## Support
+
+If issues persist:
+1. Check logs: `docker-compose logs -f`
+2. Check Nginx: `sudo nginx -t && sudo tail -f /var/log/nginx/error.log`
+3. Verify container: `docker-compose ps`
+4. Check DNS: `nslookup admasits.com`
+5. Test locally: `curl http://localhost:3000/en`
 
 ---
 
-## 📝 Notes
-
-**Deployment Date:** _______________
-
-**Deployed By:** _______________
-
-**Issues Encountered:** 
-- 
-
-**Solutions Applied:**
-- 
-
-**Additional Notes:**
-- 
-
----
-
-**Status:** ⬜ Not Started | ⬜ In Progress | ⬜ Complete
-
+**Deployment Date:** ________________  
+**Deployed By:** ________________  
+**VPS IP:** ________________  
+**Domain:** admasits.com
